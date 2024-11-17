@@ -1,4 +1,4 @@
-/* Reset CSS */
+/* General Styling */
 * {
     margin: 0;
     padding: 0;
@@ -83,7 +83,7 @@ body {
 .support-section {
     text-align: center;
     margin-top: 30px;
-    padding: 20px;
+    padding: 0 20px;
 }
 
 .support-section h2 {
@@ -260,53 +260,5 @@ form button:hover {
     color: #333;
 }
 
-/* Responsive Styling */
 
-/* For devices <=768px (general iPhone sizes) */
-@media (max-width: 768px) {
-    .navbar {
-        flex-wrap: wrap;
-        padding: 10px 20px;
-    }
 
-    .app-logo {
-        width: 30px;
-        height: 30px;
-    }
-
-    .logo {
-        font-size: 1.2em;
-    }
-
-    .navbar ul {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-
-    .navbar ul li {
-        margin: 5px 0;
-    }
-
-    .support-section {
-        padding: 15px;
-    }
-
-    .faq-item {
-        font-size: 0.9em;
-    }
-}
-
-/* For very small devices (e.g., iPhone SE) */
-@media (max-width: 375px) {
-    .faq-item {
-        padding: 8px;
-    }
-
-    .faq-content {
-        font-size: 0.9em;
-    }
-
-    .modal-content {
-        font-size: 0.85em;
-    }
-}
