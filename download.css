@@ -1,0 +1,199 @@
+/* Reset CSS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f3f8ff;
+    color: #333;
+    overflow-x: hidden;
+}
+
+/* Navbar */
+.navbar {
+    position: sticky;
+    top: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    background-color: white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+}
+
+.app-logo {
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
+}
+
+.logo {
+    font-size: 1.5em;
+    color: #007acc;
+}
+
+.navbar ul {
+    display: flex;
+    list-style: none;
+}
+
+.navbar ul li {
+    margin: 0 15px;
+}
+
+.navbar ul li a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+}
+
+.navbar ul li a.active {
+    color: #007acc;
+    font-weight: bold;
+    border-bottom: 2px solid #007acc;
+}
+
+.download-button {
+    background-color: #007acc;
+    color: white;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 6px;
+    font-size: 1.1em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    text-decoration: none;
+}
+
+.download-button:hover {
+    background-color: #005ea0;
+}
+
+/* Download Section */
+.download-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 80px 20px;
+    gap: 120px; /* Increased gap to create a comfortable distance */
+    background: linear-gradient(135deg, #007acc, #56c5ff);
+    color: white;
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+}
+
+.download-content {
+    max-width: 380px;
+    text-align: left;
+    animation: slide-in-left 1s ease-out forwards;
+}
+
+.download-content h1 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    font-weight: bold;
+    line-height: 1.2;
+}
+
+.download-content p {
+    font-size: 1.2em;
+    line-height: 1.5;
+    margin-bottom: 25px;
+}
+
+.download-app-button {
+    background-color: #007acc;
+    color: white;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 6px;
+    font-size: 1.1em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.download-app-button:hover {
+    background-color: #005ea0;
+}
+
+.phone-preview {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    animation: slide-in-right 1s ease-out forwards;
+    margin-left: 20px; /* Add margin to create more space */
+}
+
+.phone-image {
+    width: 280px;
+    border-radius: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    margin-bottom: 10px;
+}
+
+.app-store-buttons {
+    margin-top: 10px;
+    animation: slide-in-bottom 1s ease-out forwards;
+}
+
+.store-button {
+    width: 140px;
+}
+
+/* Animations */
+@keyframes slide-in-left {
+    0% {
+        opacity: 0;
+        transform: translateX(-100%);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slide-in-right {
+    0% {
+        opacity: 0;
+        transform: translateX(100%);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slide-in-top {
+    0% {
+        opacity: 0;
+        transform: translateY(-100%);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slide-in-bottom {
+    0% {
+        opacity: 0;
+        transform: translateY(100%);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    } 
+}

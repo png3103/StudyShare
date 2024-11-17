@@ -1,0 +1,141 @@
+/* Reset CSS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #f3f8ff;
+    color: #333;
+    overflow-x: hidden;
+  }
+  
+  /* Navbar */
+  .navbar {
+    position: sticky;
+    top: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    background-color: white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+  }
+  
+  .logo-container {
+    display: flex;
+    align-items: center;
+  }
+  
+  .app-logo {
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
+  }
+  
+  .logo {
+    font-size: 1.5em;
+    color: #007acc;
+  }
+  
+  .navbar ul {
+    display: flex;
+    list-style: none;
+  }
+  
+  .navbar ul li {
+    margin: 0 15px;
+  }
+  
+  .navbar ul li a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+  }
+  
+  .navbar ul li a.active {
+    color: #007acc;
+    font-weight: bold;
+    border-bottom: 2px solid #007acc;
+  }
+  
+  .download-button {
+    background-color: #007acc;
+    color: white;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 4px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  
+  .download-button:hover {
+    background-color: #005fa3;
+  }
+  
+  /* Feedback Section */
+  .feedback-section {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: white;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    text-align: center;
+  }
+  
+  .feedback-section h1 {
+    color: #007acc;
+    font-size: 2em;
+    margin-bottom: 10px;
+  }
+  
+  .feedback-section p {
+    font-size: 1.1em;
+    margin-bottom: 20px;
+    line-height: 1.6;
+  }
+  
+  .feedback-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .feedback-form label {
+    font-weight: bold;
+    text-align: left;
+  }
+  
+  .feedback-form input,
+  .feedback-form textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1em;
+  }
+  
+  .feedback-form input:focus,
+  .feedback-form textarea:focus {
+    border-color: #007acc;
+    outline: none;
+  }
+  
+  .submit-button {
+    background-color: #007acc;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.2em;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .submit-button:hover {
+    background-color: #005fa3;
+  }

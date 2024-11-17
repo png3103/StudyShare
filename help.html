@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Trợ giúp - StudyShare</title>
+  <link rel="stylesheet" href="help.css">
+</head>
+<body>
+  <!-- Navbar -->
+  <header class="navbar">
+    <div class="logo-container">
+      <img src="img/studyshare_logo_with_bgc-3.png" alt="App Logo" class="app-logo">
+      <h1 class="logo">StudyShare</h1>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="index.html">Trang chủ</a></li>
+        <li><a href="feedback.html">Phản hồi</a></li>
+        <li><a href="help.html" class="active">Trợ giúp</a></li>
+        <li><a href="aboutstudy.html">Về StudyShare</a></li>
+      </ul>
+    </nav>
+    <a href="download.html" class="download-button">Tải StudyShare</a>
+  </header>
+
+  <!-- Support Section -->
+  <section class="support-section">
+    <h2>Tìm kiếm hỗ trợ</h2>
+    <input type="text" class="search-bar" placeholder="Tìm kiếm hỗ trợ">
+    <button class="contact-button" onclick="showModal()">Gửi câu hỏi</button>
+
+    <div class="faq-list">
+      <div class="faq-item" onclick="toggleFAQ('passwordRecovery')">Quên mật khẩu</div>
+      <div id="passwordRecovery" class="faq-content">
+        <h3>Hướng dẫn lấy lại mật khẩu</h3>
+        <p>Nếu bạn quên mật khẩu, vui lòng làm theo các bước sau:</p>
+        <ol>
+            <li>Truy cập vào trang đăng nhập của StudyShare.</li>
+            <li>Nhấn vào liên kết <strong>Quên mật khẩu</strong>.</li>
+            <li>Nhập địa chỉ email đã đăng ký của bạn.</li>
+            <li>Kiểm tra email để nhận hướng dẫn đặt lại mật khẩu mới.</li>
+        </ol>
+        <p>Nếu bạn cần hỗ trợ thêm, vui lòng liên hệ với bộ phận hỗ trợ khách hàng.</p>
+      </div>
+      <div class="faq-item">Lỗi đăng nhập</div>
+      <div class="faq-item">Cập nhật ứng dụng</div>
+      <div class="faq-item">Cài đặt ứng dụng</div>
+      <div class="faq-item">Quản lý tài khoản</div>
+      <div class="faq-item">Khắc phục lỗi khi tải ứng dụng</div>
+      <div class="faq-item">Hướng dẫn sử dụng tính năng</div>
+      <div class="faq-item">Bảo mật và quyền riêng tư</div>
+      <div class="faq-item">Hỗ trợ thanh toán</div>
+    </div>
+  </section>
+
+  <!-- Modal Popup -->
+  <div id="questionModal" class="modal">
+    <div class="modal-content">
+      <span class="close-button" onclick="closeModal()">&times;</span>
+      <h3>Gửi câu hỏi</h3>
+      <form id="questionForm">
+        <label for="title">Tiêu đề:</label>
+        <input type="text" id="title" name="title" required>
+        
+        <label for="content">Nội dung:</label>
+        <textarea id="content" name="content" required></textarea>
+        
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+        
+        <label for="phone">Số điện thoại:</label>
+        <input type="tel" id="phone" name="phone">
+        
+        <button type="button" onclick="submitQuestion()">Gửi</button>
+      </form>
+    </div>
+  </div>
+
+  <script src="help.js"></script>
+</body>
+</html>
