@@ -12,7 +12,7 @@ body {
     overflow-x: hidden;
 }
 
-/* Navbar Styling */
+/* Navbar */
 .navbar {
     position: sticky;
     top: 0;
@@ -23,7 +23,7 @@ body {
     background-color: white;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     z-index: 1000;
-    flex-wrap: wrap; /* Allow wrapping for smaller screens */
+    flex-wrap: wrap; /* Allow wrapping for mobile */
 }
 
 .logo-container {
@@ -40,14 +40,14 @@ body {
 .logo {
     font-size: 1.5em;
     color: #007acc;
-    white-space: nowrap; /* Prevent wrapping for the logo text */
+    white-space: nowrap; /* Prevent wrapping */
 }
 
 .navbar ul {
     display: flex;
     list-style: none;
-    gap: 20px; /* Add spacing between items */
-    flex-wrap: wrap; /* Allow items to wrap for smaller screens */
+    gap: 15px; /* Spacing between nav items */
+    flex-wrap: wrap; /* Allow wrapping */
 }
 
 .navbar ul li {
@@ -58,8 +58,8 @@ body {
     text-decoration: none;
     color: #333;
     font-weight: 500;
+    padding: 5px 10px;
     transition: color 0.3s ease, border-bottom 0.3s ease;
-    padding: 5px 10px; /* Add padding for better spacing */
 }
 
 .navbar ul li a.active, .navbar ul li a:hover {
@@ -76,9 +76,9 @@ body {
     border-radius: 4px;
     font-weight: bold;
     cursor: pointer;
-    text-decoration: none; /* Remove underline */
-    transition: background-color 0.3s ease;
+    text-decoration: none;
     white-space: nowrap; /* Prevent wrapping */
+    transition: background-color 0.3s ease;
 }
 
 .download-button:hover {
@@ -87,11 +87,13 @@ body {
 
 /* Hero Section */
 .hero-section {
+    position: relative;
     text-align: center;
-    padding: 80px 20px; /* Compact layout */
+    padding: 60px 20px; /* Compact for smaller screens */
     background-color: #007acc;
     color: white;
     transition: background-color 0.5s ease-in-out;
+    height: auto;
 }
 
 .hero-title {
@@ -100,8 +102,33 @@ body {
     margin-bottom: 10px;
 }
 
+.hero-title .highlight {
+    color: white;
+    position: relative;
+    display: inline-block;
+    text-decoration: none;
+}
+
+.hero-title .highlight::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #ffd700;
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.3s ease-in-out;
+}
+
+.hero-title .highlight:hover::after {
+    transform: scaleX(1);
+    transform-origin: left;
+}
+
 .hero-subtitle {
-    font-size: 1.2em;
+    font-size: 1.1em;
     margin-bottom: 30px;
     color: #eaf4fc;
 }
@@ -110,18 +137,18 @@ body {
     display: flex;
     justify-content: center;
     gap: 30px;
-    flex-wrap: wrap; /* Allow wrapping for smaller screens */
+    flex-wrap: wrap; /* Allow wrapping for mobile */
 }
 
 .png-innovative, .coming-soon {
     background-color: white;
     color: #007acc;
-    padding: 15px 25px;
+    padding: 15px 20px;
     border-radius: 8px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
     text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
     flex: 1;
-    min-width: 200px; /* Prevent items from becoming too narrow */
     max-width: 300px;
 }
 
@@ -130,12 +157,23 @@ body {
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
 }
 
+.png-innovative p, .coming-soon p {
+    font-size: 0.9em;
+    font-weight: 500;
+}
+
+.png-innovative h2, .coming-soon h2 {
+    font-size: 1.5em;
+    font-weight: bold;
+    margin-top: 5px;
+}
+
 /* Main Section */
 .main-section {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    flex-wrap: wrap; /* Allow wrapping */
+    flex-wrap: wrap; /* Enable wrapping for smaller screens */
     padding: 50px 20px;
     background-color: #f3f8ff;
 }
@@ -143,7 +181,7 @@ body {
 .app-demo {
     flex: 1;
     text-align: center;
-    margin-bottom: 20px; /* Add spacing for wrapping */
+    margin-bottom: 20px; /* Add space below for mobile */
 }
 
 .app-demo img {
@@ -151,14 +189,9 @@ body {
     max-width: 300px;
     border-radius: 10px;
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.app-demo img:hover {
-    transform: scale(1.05);
-    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
-}
-
+/* Features Section */
 .features-section {
     flex: 1.5;
     padding: 20px;
@@ -168,6 +201,7 @@ body {
     font-size: 1.8em;
     color: #007acc;
     margin-bottom: 20px;
+    text-align: left;
 }
 
 .features-container {
@@ -178,9 +212,11 @@ body {
 
 .feature-item {
     background-color: white;
-    padding: 15px;
+    padding: 15px 20px;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -189,67 +225,88 @@ body {
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
+.feature-icon {
+    width: 60px;
+    height: 60px;
+    margin-right: 15px;
+}
+
+/* Flash Quiz Section */
+.flash-quiz-section {
+    padding: 40px 20px;
+    background: linear-gradient(135deg, #f9f9ff, #e3f2fd);
+    text-align: center;
+    border-top: 3px solid #007acc;
+}
+
+.flash-quiz-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: center;
+}
+
+.flash-quiz-text {
+    flex: 1;
+    max-width: 600px;
+    background-color: white;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    text-align: left;
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
+    .navbar ul {
+        gap: 10px;
+    }
+
     .hero-title {
         font-size: 2rem;
     }
 
+    .features-section h2 {
+        font-size: 1.5em;
+    }
+
     .hero-announcement {
-        gap: 20px;
-    }
-
-    .navbar ul {
-        justify-content: center; /* Center-align for smaller screens */
-    }
-
-    .navbar ul li {
-        margin: 5px 0; /* Add spacing for vertical stacking */
+        gap: 15px;
     }
 }
 
 @media (max-width: 576px) {
     .navbar ul {
-        flex-direction: column; /* Stack items vertically */
+        flex-direction: column;
         align-items: center;
+    }
+
+    .download-button {
+        margin-top: 10px;
     }
 
     .app-logo {
         width: 30px;
         height: 30px;
     }
-
-    .download-button {
-        padding: 6px 12px; /* Reduce padding */
-    }
-
-    .hero-title {
-        font-size: 1.8rem;
-    }
-
-    .features-section h2 {
-        font-size: 1.5rem;
-    }
 }
 
 @media (max-width: 375px) {
     .hero-title {
-        font-size: 1.5rem;
+        font-size: 1.8em;
     }
 
     .hero-subtitle {
         font-size: 1rem;
     }
+}
+
+@media (max-width: 320px) {
+    .hero-title {
+        font-size: 1.5em;
+    }
 
     .navbar ul li a {
-        padding: 5px; /* Reduce padding for links */
-    }
-
-    .png-innovative, .coming-soon {
-        padding: 10px 15px;
-    }
-
-    .features-container {
-        gap: 15px; /* Reduce gap */
+        font-size: 0.9em;
     }
 }
