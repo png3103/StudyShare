@@ -14,6 +14,8 @@ body {
 
 /* Navbar Styling */
 .navbar {
+    position: sticky;
+    top: 0;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -21,6 +23,7 @@ body {
     background-color: white;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     z-index: 1000;
+    flex-wrap: wrap; /* Allow wrapping for smaller screens */
 }
 
 .logo-container {
@@ -37,24 +40,29 @@ body {
 .logo {
     font-size: 1.5em;
     color: #007acc;
+    white-space: nowrap; /* Prevent wrapping for the logo text */
 }
 
 .navbar ul {
     display: flex;
     list-style: none;
+    gap: 20px; /* Add spacing between items */
+    flex-wrap: wrap; /* Allow items to wrap for smaller screens */
 }
 
 .navbar ul li {
-    margin: 0 15px;
+    margin: 0;
 }
 
 .navbar ul li a {
     text-decoration: none;
     color: #333;
     font-weight: 500;
+    transition: color 0.3s ease, border-bottom 0.3s ease;
+    padding: 5px 10px; /* Add padding for better spacing */
 }
 
-.navbar ul li a.active {
+.navbar ul li a.active, .navbar ul li a:hover {
     color: #007acc;
     font-weight: bold;
     border-bottom: 2px solid #007acc;
@@ -68,69 +76,41 @@ body {
     border-radius: 4px;
     font-weight: bold;
     cursor: pointer;
-    text-decoration: none;
+    text-decoration: none; /* Remove underline */
+    transition: background-color 0.3s ease;
+    white-space: nowrap; /* Prevent wrapping */
+}
+
+.download-button:hover {
+    background-color: #005fa3; /* Optional hover effect */
 }
 
 /* Hero Section */
 .hero-section {
-    position: relative;
     text-align: center;
-    padding: 80px 20px;
+    padding: 80px 20px; /* Compact layout */
     background-color: #007acc;
     color: white;
     transition: background-color 0.5s ease-in-out;
-    height: auto;
-}
-
-/* Hero Content */
-.hero-content {
-    position: relative;
-    transition: opacity 0.5s ease-in-out;
 }
 
 .hero-title {
-    font-size: 3em;
+    font-size: 2.5em;
     font-weight: bold;
     margin-bottom: 10px;
 }
 
-.hero-title .highlight {
-    color: white;
-    position: relative;
-    display: inline-block;
-    text-decoration: none;
-}
-
-.hero-title .highlight::after {
-    content: '';
-    position: absolute;
-    bottom: -5px;
-    left: 0;
-    width: 100%;
-    height: 2px;
-    background-color: #ffd700;
-    transform: scaleX(0);
-    transform-origin: right;
-    transition: transform 0.3s ease-in-out;
-}
-
-.hero-title .highlight:hover::after {
-    transform: scaleX(1);
-    transform-origin: left;
-}
-
 .hero-subtitle {
-    font-size: 1.3em;
+    font-size: 1.2em;
     margin-bottom: 30px;
     color: #eaf4fc;
 }
 
-/* Announcement Section */
 .hero-announcement {
     display: flex;
     justify-content: center;
     gap: 30px;
-    margin-top: 20px;
+    flex-wrap: wrap; /* Allow wrapping for smaller screens */
 }
 
 .png-innovative, .coming-soon {
@@ -140,7 +120,9 @@ body {
     border-radius: 8px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
     text-align: center;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    flex: 1;
+    min-width: 200px; /* Prevent items from becoming too narrow */
+    max-width: 300px;
 }
 
 .png-innovative:hover, .coming-soon:hover {
@@ -148,71 +130,57 @@ body {
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
 }
 
-.png-innovative p, .coming-soon p {
-    font-size: 0.9em;
-    font-weight: 500;
-}
-
-.png-innovative h2, .coming-soon h2 {
-    font-size: 1.5em;
-    font-weight: bold;
-    margin-top: 5px;
-}
-
 /* Main Section */
 .main-section {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
-    padding: 50px 0;
+    flex-wrap: wrap; /* Allow wrapping */
+    padding: 50px 20px;
     background-color: #f3f8ff;
 }
 
 .app-demo {
     flex: 1;
-    display: flex;
-    justify-content: center;
+    text-align: center;
+    margin-bottom: 20px; /* Add spacing for wrapping */
 }
 
-.app-demo-image {
-    width: 300px;
-    border-radius: 20px;
+.app-demo img {
+    width: 100%;
+    max-width: 300px;
+    border-radius: 10px;
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.app-demo-image:hover {
-    transform: scale(1.1);
+.app-demo img:hover {
+    transform: scale(1.05);
     box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
 }
 
-/* Features Section */
 .features-section {
     flex: 1.5;
     padding: 20px;
 }
 
 .features-section h2 {
-    color: #007acc;
     font-size: 1.8em;
+    color: #007acc;
     margin-bottom: 20px;
-    text-align: left;
 }
 
 .features-container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 20px;
 }
 
 .feature-item {
     background-color: white;
-    padding: 15px 20px;
+    padding: 15px;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    display: flex;
-    align-items: center;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -221,82 +189,67 @@ body {
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
-.feature-icon-container {
-    margin-right: 15px;
-}
-
-.feature-icon {
-    width: 60px;
-    height: 60px;
-}
-
-.feature-text h3 {
-    color: #007acc;
-    font-size: 1.1em;
-    margin-bottom: 5px;
-}
-
-.feature-text p {
-    font-size: 0.9em;
-    color: #555;
-}
-
 /* Responsive Design */
-/* For iPhones (small screens) */
 @media (max-width: 768px) {
     .hero-title {
-        font-size: 2.5em;
+        font-size: 2rem;
     }
 
     .hero-announcement {
-        flex-direction: column;
         gap: 20px;
     }
 
-    .features-container {
-        grid-template-columns: 1fr;
+    .navbar ul {
+        justify-content: center; /* Center-align for smaller screens */
     }
 
-    .feature-item {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    .app-demo-image {
-        width: 90%;
+    .navbar ul li {
+        margin: 5px 0; /* Add spacing for vertical stacking */
     }
 }
 
-/* For iPhone SE and smaller screens */
+@media (max-width: 576px) {
+    .navbar ul {
+        flex-direction: column; /* Stack items vertically */
+        align-items: center;
+    }
+
+    .app-logo {
+        width: 30px;
+        height: 30px;
+    }
+
+    .download-button {
+        padding: 6px 12px; /* Reduce padding */
+    }
+
+    .hero-title {
+        font-size: 1.8rem;
+    }
+
+    .features-section h2 {
+        font-size: 1.5rem;
+    }
+}
+
 @media (max-width: 375px) {
     .hero-title {
-        font-size: 1.8em;
+        font-size: 1.5rem;
     }
 
     .hero-subtitle {
-        font-size: 0.9em;
+        font-size: 1rem;
+    }
+
+    .navbar ul li a {
+        padding: 5px; /* Reduce padding for links */
     }
 
     .png-innovative, .coming-soon {
-        padding: 10px 20px;
-    }
-
-    .feature-text p {
-        font-size: 0.8em;
-    }
-}
-
-/* For large screens (desktop) */
-@media (min-width: 1024px) {
-    .hero-title {
-        font-size: 3em;
-    }
-
-    .hero-subtitle {
-        font-size: 1.3em;
+        padding: 10px 15px;
     }
 
     .features-container {
-        grid-template-columns: repeat(2, 1fr);
+        gap: 15px; /* Reduce gap */
     }
 }
