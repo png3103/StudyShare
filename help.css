@@ -1,4 +1,4 @@
-/* General Styling */
+/* Reset CSS */
 * {
     margin: 0;
     padding: 0;
@@ -83,7 +83,7 @@ body {
 .support-section {
     text-align: center;
     margin-top: 30px;
-    padding: 0 20px;
+    padding: 20px;
 }
 
 .support-section h2 {
@@ -260,96 +260,53 @@ form button:hover {
     color: #333;
 }
 
-/* Mobile-first styling */
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f3f8ff;
-    color: #333;
-    overflow-x: hidden;
-}
+/* Responsive Styling */
 
-/* Navbar Styling */
-.navbar {
-    display: flex;
-    flex-wrap: wrap; /* Enable wrapping for mobile */
-    justify-content: space-between;
-    padding: 15px 10px;
-}
+/* For devices <=768px (general iPhone sizes) */
+@media (max-width: 768px) {
+    .navbar {
+        flex-wrap: wrap;
+        padding: 10px 20px;
+    }
 
-.logo-container {
-    display: flex;
-    align-items: center;
-}
+    .app-logo {
+        width: 30px;
+        height: 30px;
+    }
 
-.app-logo {
-    width: 30px; /* Smaller size for mobile */
-    height: 30px;
-}
+    .logo {
+        font-size: 1.2em;
+    }
 
-.logo {
-    font-size: 1.2em;
-}
-
-.navbar ul {
-    display: flex;
-    flex-direction: column; /* Stack links for mobile */
-    margin-top: 10px;
-}
-
-.navbar ul li {
-    margin: 5px 0;
-}
-
-/* Support Section */
-.support-section {
-    padding: 10px;
-    text-align: center;
-}
-
-.search-bar {
-    width: 90%; /* Adjust width for mobile */
-    max-width: 500px;
-}
-
-.contact-button {
-    margin-top: 10px;
-    padding: 8px 16px;
-}
-
-/* FAQ List */
-.faq-list {
-    display: flex;
-    flex-direction: column; /* Stack items for mobile */
-    align-items: stretch;
-    margin-top: 15px;
-}
-
-.faq-item {
-    margin: 5px 0;
-    padding: 10px;
-}
-
-/* Modal Styling */
-.modal-content {
-    width: 90%;
-    max-width: 350px; /* Smaller width for mobile */
-}
-
-/* Media Query for larger screens */
-@media (min-width: 768px) {
     .navbar ul {
-        flex-direction: row; /* Horizontal layout for desktop */
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .navbar ul li {
+        margin: 5px 0;
     }
 
     .support-section {
-        padding: 20px;
+        padding: 15px;
     }
 
-    .search-bar {
-        max-width: 600px;
+    .faq-item {
+        font-size: 0.9em;
+    }
+}
+
+/* For very small devices (e.g., iPhone SE) */
+@media (max-width: 375px) {
+    .faq-item {
+        padding: 8px;
+    }
+
+    .faq-content {
+        font-size: 0.9em;
     }
 
     .modal-content {
-        max-width: 500px; /* Wider for larger screens */
+        font-size: 0.85em;
     }
 }
