@@ -213,6 +213,70 @@ body {
     color: #555;
 }
 
+/* Hero Section */
+.hero-section {
+    position: relative;
+    text-align: center;
+    padding: 5rem 2rem; /* Đảm bảo phù hợp trên desktop và mobile */
+    background-color: #007acc;
+    color: white;
+    transition: background-color 0.5s ease-in-out;
+}
+
+/* Hero Content */
+.hero-content {
+    position: relative;
+    max-width: 1200px;
+    margin: 0 auto; /* Căn giữa nội dung */
+    transition: opacity 0.5s ease-in-out;
+}
+
+.hero-title {
+    font-size: 3rem; /* Kích thước lớn trên desktop */
+    font-weight: bold;
+    margin-bottom: 1rem;
+    line-height: 1.2; /* Tạo khoảng cách tốt hơn giữa các dòng */
+}
+
+.hero-title .highlight {
+    color: white;
+    position: relative;
+    display: inline-block;
+    text-decoration: none;
+}
+
+.hero-subtitle {
+    font-size: 1.2rem; /* Phù hợp trên desktop */
+    margin-bottom: 2rem;
+    color: #eaf4fc;
+    line-height: 1.6;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .hero-section {
+        padding: 4rem 1.5rem; /* Giảm khoảng cách trên mobile */
+    }
+
+    .hero-title {
+        font-size: 2rem; /* Thu nhỏ tiêu đề trên mobile */
+    }
+
+    .hero-subtitle {
+        font-size: 1rem; /* Thu nhỏ phụ đề trên mobile */
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-title {
+        font-size: 1.8rem; /* Kích thước nhỏ hơn cho màn hình rất nhỏ */
+    }
+
+    .hero-subtitle {
+        font-size: 0.9rem; /* Phụ đề nhỏ hơn cho màn hình rất nhỏ */
+    }
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
     .navbar {
