@@ -241,7 +241,7 @@ body {
     justify-content: space-around;
     align-items: center;
     padding: 1rem 0.5rem; /* Adjusted padding for smaller spacing */
-  gap: 0.5rem; /* Reduced gap */
+    gap: 1.5rem; /* Reduced gap */
     background-color: #f3f8ff;
     flex-wrap: wrap;
 }
