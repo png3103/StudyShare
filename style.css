@@ -46,12 +46,17 @@ body {
   color: #007acc;
 }
 
+.nav-links {
+  display: flex;
+  align-items: center;
+  flex: 1;
+  justify-content: center; /* Center the navigation links */
+}
+
 .desktop-menu {
   display: flex;
   list-style: none;
-  gap: 1.5rem;
-  margin-right: auto;
-  margin-left: auto;
+  gap: 2rem;
 }
 
 .desktop-menu li a {
@@ -70,6 +75,22 @@ body {
   font-weight: bold;
 }
 
+.download-button {
+  background-color: #007acc;
+  color: white;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 0.25rem;
+  font-weight: bold;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.download-button:hover {
+  background-color: #005fa3;
+}
+
 .navbar-toggle {
   display: none;
   background-color: transparent;
@@ -79,6 +100,7 @@ body {
   cursor: pointer;
 }
 
+/* Mobile Menu */
 .mobile-menu {
   display: none;
   flex-direction: column;
@@ -115,22 +137,6 @@ body {
   color: #007acc;
 }
 
-.download-button {
-  background-color: #007acc;
-  color: white;
-  padding: 0.5rem 1rem;
-  border: none;
-  border-radius: 0.25rem;
-  font-weight: bold;
-  cursor: pointer;
-  text-decoration: none;
-  transition: background-color 0.3s ease;
-}
-
-.download-button:hover {
-  background-color: #005fa3;
-}
-
 /* Responsive Design */
 @media (max-width: 768px) {
   .desktop-menu {
@@ -147,6 +153,11 @@ body {
 
   .mobile-menu.show {
     display: flex; /* Show mobile dropdown menu */
+  }
+
+  .download-button {
+    order: 3;
+    margin-top: 0.5rem;
   }
 }
 
