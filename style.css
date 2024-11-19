@@ -146,56 +146,51 @@ body {
   .navbar {
     display: flex;
     flex-direction: row; /* Đảm bảo các phần tử nằm ngang */
-    flex-wrap: nowrap; /* Không cho các phần tử xuống dòng */
-    justify-content: space-between; /* Giữa các phần tử có khoảng cách hợp lý */
-    align-items: center; /* Căn giữa theo chiều dọc */
-    padding: 0.5rem 1rem; /* Điều chỉnh khoảng cách */
-    width: 100%; /* Đảm bảo navbar chiếm toàn bộ chiều rộng */
+    justify-content: space-between; /* Phân bổ khoảng cách đều giữa các phần tử */
+    align-items: center; /* Căn giữa các phần tử theo chiều dọc */
+    padding: 0.5rem 1rem; /* Tạo khoảng cách phù hợp */
+    width: 100%; /* Đảm bảo chiều rộng navbar bao phủ toàn màn hình */
     box-sizing: border-box; /* Bao gồm padding trong chiều rộng */
   }
 
   .navbar-toggle {
     display: block; /* Hiển thị nút toggle */
+    order: 1; /* Đặt toggle ở bên trái */
     font-size: 1.5rem;
-    color: #007acc;
-    background: none;
-    border: none;
-    cursor: pointer;
-    order: 1; /* Đặt nút toggle ở bên trái */
-    flex-shrink: 0; /* Ngăn toggle bị thu nhỏ */
     margin-right: 1rem; /* Tạo khoảng cách giữa toggle và logo */
+    flex-shrink: 0; /* Ngăn toggle bị thu nhỏ */
   }
 
   .logo-container {
     order: 2; /* Đặt logo ở giữa */
-    flex-grow: 1; /* Chiếm không gian còn lại giữa toggle và nút tải */
+    flex-grow: 1; /* Giúp logo chiếm khoảng trống giữa toggle và nút tải */
     display: flex;
-    justify-content: center; /* Căn giữa logo */
+    justify-content: center; /* Căn giữa logo trong container */
     align-items: center; /* Căn giữa theo chiều dọc */
-    text-align: center;
+    max-width: 50%; /* Đảm bảo logo không chiếm quá nhiều không gian */
   }
 
   .app-logo {
-    width: 2rem; /* Đảm bảo logo icon không quá lớn */
+    width: 2rem; /* Giảm kích thước logo icon nếu cần */
     height: 2rem;
-    margin-right: 0.5rem; /* Khoảng cách giữa logo icon và tên */
+    margin-right: 0.5rem; /* Khoảng cách giữa logo icon và text */
   }
 
   .logo {
-    font-size: 1.2rem; /* Điều chỉnh kích thước logo text */
-    white-space: nowrap; /* Ngăn logo xuống dòng */
+    font-size: 1rem; /* Giảm kích thước text logo trên màn hình nhỏ */
+    white-space: nowrap; /* Ngăn text bị xuống dòng */
   }
 
   .download-button {
     order: 3; /* Đặt nút tải xuống ở bên phải */
-    flex-shrink: 0; /* Ngăn nút tải xuống bị thu nhỏ */
+    flex-shrink: 0; /* Ngăn nút tải bị thu nhỏ */
     padding: 0.5rem 1rem;
-    font-size: 1rem;
+    font-size: 0.9rem; /* Giảm kích thước chữ nếu cần */
+    margin-left: 1rem; /* Tạo khoảng cách giữa logo và nút tải */
     border-radius: 0.25rem;
     background-color: #007acc;
     color: white;
     text-decoration: none;
-    margin-left: 1rem; /* Tạo khoảng cách giữa logo và nút tải */
     transition: background-color 0.3s ease;
   }
 
