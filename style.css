@@ -114,29 +114,18 @@ body {
     color: #007acc;
 }
 
-
-/* Mobile Actions */
-.mobile-actions {
-    display: none;
-    align-items: center;
-}
-
-/* Responsive Design */
+/* Media Queries for Mobile View */
 @media (max-width: 768px) {
-    .desktop-menu {
-        display: none;
+    .navbar ul {
+        display: none; /* Hide desktop menu */
     }
 
-    .navbar {
-        flex-direction: column;
-    }
-
-    .mobile-actions {
-        display: flex;
+    .navbar-toggle {
+        display: block; /* Show toggle button */
     }
 
     .mobile-menu.show {
-        display: flex;
+        display: flex; /* Show mobile dropdown menu */
     }
 }
 
