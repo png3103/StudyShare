@@ -145,12 +145,12 @@ body {
 
   .navbar {
     display: flex;
-    flex-direction: row; /* Đảm bảo các phần tử nằm trên một hàng */
+    flex-direction: row; /* Đảm bảo các phần tử nằm ngang */
     flex-wrap: nowrap; /* Không cho các phần tử xuống dòng */
-    justify-content: space-between; /* Đặt khoảng cách giữa các phần tử */
+    justify-content: space-between; /* Giữa các phần tử có khoảng cách hợp lý */
     align-items: center; /* Căn giữa theo chiều dọc */
     padding: 0.5rem 1rem; /* Điều chỉnh khoảng cách */
-    width: 100%; /* Đảm bảo navbar không vượt quá chiều rộng màn hình */
+    width: 100%; /* Đảm bảo navbar chiếm toàn bộ chiều rộng */
     box-sizing: border-box; /* Bao gồm padding trong chiều rộng */
   }
 
@@ -161,24 +161,34 @@ body {
     background: none;
     border: none;
     cursor: pointer;
-    order: 1; /* Đặt toggle ở bên trái */
+    order: 1; /* Đặt nút toggle ở bên trái */
     flex-shrink: 0; /* Ngăn toggle bị thu nhỏ */
     margin-right: 1rem; /* Tạo khoảng cách giữa toggle và logo */
   }
 
   .logo-container {
     order: 2; /* Đặt logo ở giữa */
-    flex-grow: 1; /* Chiếm không gian giữa toggle và nút tải */
+    flex-grow: 1; /* Chiếm không gian còn lại giữa toggle và nút tải */
     display: flex;
     justify-content: center; /* Căn giữa logo */
     align-items: center; /* Căn giữa theo chiều dọc */
-    max-width: 50%; /* Giới hạn chiều rộng logo để tránh tràn */
-    overflow: hidden; /* Ẩn phần dư nếu logo quá dài */
+    text-align: center;
+  }
+
+  .app-logo {
+    width: 2rem; /* Đảm bảo logo icon không quá lớn */
+    height: 2rem;
+    margin-right: 0.5rem; /* Khoảng cách giữa logo icon và tên */
+  }
+
+  .logo {
+    font-size: 1.2rem; /* Điều chỉnh kích thước logo text */
+    white-space: nowrap; /* Ngăn logo xuống dòng */
   }
 
   .download-button {
-    order: 3; /* Đặt nút tải ở bên phải */
-    flex-shrink: 0; /* Ngăn nút tải bị thu nhỏ */
+    order: 3; /* Đặt nút tải xuống ở bên phải */
+    flex-shrink: 0; /* Ngăn nút tải xuống bị thu nhỏ */
     padding: 0.5rem 1rem;
     font-size: 1rem;
     border-radius: 0.25rem;
@@ -191,19 +201,6 @@ body {
 
   .download-button:hover {
     background-color: #005fa3;
-  }
-
-  .mobile-menu.show {
-    display: flex; /* Hiển thị menu khi toggle */
-    flex-direction: column;
-    align-items: flex-start;
-    background-color: white;
-    width: 100%;
-    padding: 1rem 0;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    z-index: 999;
   }
 }
 
