@@ -140,34 +140,63 @@ body {
 /* Responsive Design */
 @media (max-width: 768px) {
   .desktop-menu {
-    display: none; /* Hide desktop menu on mobile */
+    display: none; /* Ẩn menu desktop trên mobile */
   }
 
   .navbar {
-    flex-wrap: wrap;
-    justify-content: space-between;
+    display: flex;
+    flex-wrap: nowrap; /* Không cho các phần tử xuống dòng */
+    justify-content: space-between; /* Đặt khoảng cách giữa các phần tử */
+    align-items: center; /* Căn giữa theo chiều dọc */
+    padding: 0.5rem 1rem; /* Điều chỉnh khoảng cách để phù hợp màn hình nhỏ */
   }
 
   .navbar-toggle {
-    display: block; /* Show the toggle button */
-    order: 1; /* Place toggle button first */
+    display: block; /* Hiển thị nút toggle */
+    order: 1; /* Đặt nút toggle ở bên trái */
+    font-size: 1.5rem;
+    color: #007acc;
+    background: none;
+    border: none;
+    cursor: pointer;
+    margin-right: auto; /* Đẩy toggle sát bên trái */
   }
 
   .logo-container {
-    order: 2; /* Place logo container in the center */
-    flex: 1;
-    justify-content: center; /* Center logo container */
+    order: 2; /* Đặt logo ở giữa */
+    flex: 1; /* Chiếm không gian còn lại giữa toggle và nút tải */
     display: flex;
+    justify-content: center; /* Căn giữa logo trong vùng logo-container */
+    align-items: center;
   }
 
   .download-button {
-    order: 3; /* Place download button last */
-    margin-top: 0.5rem;
-    align-self: flex-end; /* Align download button to the end */
+    order: 3; /* Đặt nút tải xuống bên phải */
+    margin-left: auto; /* Đẩy nút tải sát bên phải */
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    border-radius: 0.25rem;
+    background-color: #007acc;
+    color: white;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+  }
+
+  .download-button:hover {
+    background-color: #005fa3;
   }
 
   .mobile-menu.show {
-    display: flex; /* Show mobile dropdown menu */
+    display: flex; /* Hiển thị menu khi được toggle */
+    flex-direction: column;
+    align-items: flex-start;
+    background-color: white;
+    width: 100%;
+    padding: 1rem 0;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 999;
   }
 }
 
