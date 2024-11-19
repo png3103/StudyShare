@@ -631,7 +631,7 @@ body {
 @media (max-width: 768px) {
     .flash-quiz-container {
         grid-template-columns: 1fr; /* Chuyển về 1 cột */
-        gap: 1.5rem; /* Giảm khoảng cách */
+        gap: 2rem; /* Giữ khoảng cách thoải mái hơn */
     }
 
     .flash-quiz-image {
@@ -642,22 +642,27 @@ body {
     .flash-quiz-text {
         grid-column: 1; /* Nội dung nằm dưới ảnh */
         text-align: center; /* Căn giữa nội dung trên mobile */
+        font-size: 1.2rem; /* Tăng kích thước văn bản */
+        line-height: 1.8; /* Điều chỉnh khoảng cách dòng */
+        padding: 2rem; /* Tăng padding để dễ đọc hơn */
     }
 }
 
 @media (max-width: 480px) {
     .flash-quiz-section h2 {
-        font-size: 2rem; /* Giảm kích thước tiêu đề */
+        font-size: 2.2rem; /* Giữ tiêu đề lớn hơn một chút */
     }
 
     .flash-quiz-text {
-        font-size: 0.5rem; /* Giảm kích thước văn bản */
-        padding: 1.5rem; /* Giảm padding */
+        font-size: 1rem; /* Tăng kích thước văn bản */
+        line-height: 1.6; /* Giữ khoảng cách dòng thoải mái */
+        padding: 1.8rem; /* Tăng nhẹ padding */
+        max-width: 90%; /* Tăng chiều rộng tối đa để văn bản thoáng hơn */
+        margin: 0 auto; /* Căn giữa văn bản */
     }
 
     .flash-quiz-image img {
-        max-width: 80%; /* Thu nhỏ ảnh trên màn hình rất nhỏ */
+        max-width: 90%; /* Thu nhỏ ảnh vừa phải */
         margin: 0 auto; /* Căn giữa ảnh */
     }
-
 }
