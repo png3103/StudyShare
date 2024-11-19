@@ -110,34 +110,53 @@ body {
 .hero-announcement {
     display: flex;
     justify-content: center;
-    gap: 2rem;
-    margin-top: 2rem;
+    gap: 30px;
+    margin-top: 20px;
 }
 
-.announcement-box {
+.png-innovative, .coming-soon {
     background-color: white;
     color: #007acc;
-    padding: 1rem 1.5rem;
-    border-radius: 0.5rem;
-    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
+    padding: 15px 25px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
     text-align: center;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.announcement-box:hover {
+.png-innovative:hover, .coming-soon:hover {
     transform: scale(1.05);
-    box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.3);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
 }
 
-.announcement-box h2 {
-    font-size: 1.25rem;
-    margin-bottom: 0.5rem;
-}
-
-.announcement-box p {
-    font-size: 1rem;
+.png-innovative p, .coming-soon p {
+    font-size: 0.9em;
     font-weight: 500;
 }
+
+.png-innovative h2, .coming-soon h2 {
+    font-size: 1.5em;
+    font-weight: bold;
+    margin-top: 5px;
+}
+
+.coming-soon h2 {
+    color: #007acc; /* No highlight color, neutral styling */
+}
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .hero-title {
+      font-size: 2.5em;
+    }
+  
+    .hero-announcement {
+      flex-direction: column;
+      gap: 20px;
+    }
+  }
+
+
 
 /* Main Section */
 .main-section {
