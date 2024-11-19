@@ -4,7 +4,8 @@ document.addEventListener('DOMContentLoaded', () => {
   const mobileMenu = document.getElementById('mobile-menu');
 
   toggleButton.addEventListener('click', () => {
-    mobileMenu.classList.toggle('show'); // Toggle the visibility of the mobile menu
+    // Toggle the visibility of the mobile menu
+    mobileMenu.classList.toggle('show');
   });
 });
 
