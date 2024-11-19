@@ -487,22 +487,20 @@ body {
 }
 
 .flash-quiz-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 2rem;
-    flex-wrap: nowrap; /* Đảm bảo ảnh và nội dung nằm ngang trên desktop */
+    display: grid; /* Sử dụng Grid Layout để đảm bảo vị trí cố định */
+    grid-template-columns: 1fr 1fr; /* 2 cột: ảnh - nội dung */
+    gap: 2rem; /* Khoảng cách giữa ảnh và nội dung */
+    align-items: center; /* Căn giữa theo chiều dọc */
 }
 
 .flash-quiz-image {
-    flex: 1;
-    max-width: 300px;
-    text-align: center;
+    grid-column: 1; /* Đặt ảnh luôn ở cột 1 */
+    justify-self: center; /* Đảm bảo ảnh luôn ở giữa cột */
 }
 
 .flash-quiz-image img {
     width: 100%;
-    max-width: 300px; /* Đảm bảo hình ảnh không quá lớn */
+    max-width: 300px; /* Giới hạn kích thước hình ảnh */
     height: auto; /* Giữ tỷ lệ hình ảnh */
     border-radius: 15px;
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25);
@@ -515,13 +513,13 @@ body {
 }
 
 .flash-quiz-text {
-    flex: 1;
+    grid-column: 2; /* Đặt nội dung luôn ở cột 2 */
     max-width: 600px;
     background-color: white;
     padding: 2rem;
     border-radius: 1rem;
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
-    text-align: left; /* Giữ nội dung căn trái trên desktop */
+    text-align: left; /* Căn trái nội dung */
     font-size: 1.1rem;
     line-height: 1.8;
     color: #333;
@@ -535,27 +533,33 @@ body {
 /* Responsive Design for Flash Quiz Section */
 @media (max-width: 768px) {
     .flash-quiz-container {
-        flex-direction: column; /* Stack content vertically on mobile */
-        gap: 1.5rem; /* Khoảng cách giữa ảnh và nội dung */
+        grid-template-columns: 1fr; /* Chuyển về 1 cột */
+        gap: 1.5rem; /* Giảm khoảng cách */
+    }
+
+    .flash-quiz-image {
+        grid-column: 1; /* Đảm bảo ảnh nằm trước nội dung */
+        justify-self: center;
     }
 
     .flash-quiz-text {
+        grid-column: 1; /* Nội dung nằm dưới ảnh */
         text-align: center; /* Căn giữa nội dung trên mobile */
     }
 }
 
 @media (max-width: 480px) {
     .flash-quiz-section h2 {
-        font-size: 2rem; /* Giảm kích thước tiêu đề trên màn hình nhỏ */
+        font-size: 2rem; /* Giảm kích thước tiêu đề */
     }
 
     .flash-quiz-text {
         font-size: 1rem; /* Giảm kích thước văn bản */
-        padding: 1.5rem; /* Giảm padding trên màn hình nhỏ */
+        padding: 1.5rem; /* Giảm padding */
     }
 
     .flash-quiz-image img {
-        max-width: 80%; /* Thu nhỏ hình ảnh trên màn hình nhỏ */
-        margin: 0 auto; /* Căn giữa hình ảnh */
+        max-width: 80%; /* Thu nhỏ ảnh trên màn hình rất nhỏ */
+        margin: 0 auto; /* Căn giữa ảnh */
     }
 }
