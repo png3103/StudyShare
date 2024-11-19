@@ -492,6 +492,7 @@ body {
     justify-content: center;
     align-items: center;
     gap: 2rem;
+    flex-direction: column; /* Default for all screen sizes */
 }
 
 .flash-quiz-image {
@@ -525,6 +526,7 @@ body {
     font-size: 1.1rem;
     line-height: 1.8;
     color: #333;
+    text-align: center;
 }
 
 .flash-quiz-text p {
@@ -535,16 +537,11 @@ body {
 /* Responsive Design for Flash Quiz Section */
 @media (max-width: 768px) {
     .flash-quiz-container {
-        flex-direction: column; /* Stack the content vertically on mobile */
-        gap: 1rem; /* Reduce gap for better layout */
-    }
-
-    .flash-quiz-image {
-        order: 1; /* Ensure image appears above text */
+        flex-direction: column; /* Stack content vertically on mobile */
+        gap: 1.5rem; /* Reduce gap for better layout */
     }
 
     .flash-quiz-text {
-        order: 2; /* Ensure text appears below image */
         text-align: center; /* Center-align text for mobile */
     }
 }
