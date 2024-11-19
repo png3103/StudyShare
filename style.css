@@ -6,7 +6,7 @@
 }
 
 html {
-    font-size: 16px; /* Thiết lập kích thước gốc */
+    font-size: 16px;
 }
 
 body {
@@ -22,12 +22,19 @@ body {
     position: sticky;
     top: 0;
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1rem 2rem;
+    flex-direction: column;
+    align-items: flex-start;
     background-color: white;
     box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.1);
     z-index: 1000;
+    padding: 1rem 2rem;
+}
+
+.navbar-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
 }
 
 .logo-container {
@@ -46,28 +53,30 @@ body {
     color: #007acc;
 }
 
-.navbar ul {
+/* Desktop Menu */
+.desktop-menu {
     display: flex;
     list-style: none;
     gap: 1.5rem;
 }
 
-.navbar ul li a {
+.desktop-menu li a {
     text-decoration: none;
     color: #333;
     font-weight: 500;
     transition: color 0.3s ease;
 }
 
-.navbar ul li a:hover {
+.desktop-menu li a:hover {
     color: #007acc;
 }
 
-.navbar ul li a.active {
+.desktop-menu li a.active {
     color: #007acc;
     font-weight: bold;
 }
-/* Mobile Navbar (Hidden Dropdown Menu) */
+
+/* Mobile Menu */
 .navbar-toggle {
     display: none;
     background-color: transparent;
@@ -75,6 +84,7 @@ body {
     font-size: 2rem;
     color: #007acc;
     cursor: pointer;
+    margin-right: 1rem;
 }
 
 .mobile-menu {
@@ -114,21 +124,7 @@ body {
     color: #007acc;
 }
 
-/* Media Queries for Mobile View */
-@media (max-width: 768px) {
-    .navbar ul {
-        display: none; /* Hide desktop menu */
-    }
-
-    .navbar-toggle {
-        display: block; /* Show toggle button */
-    }
-
-    .mobile-menu.show {
-        display: flex; /* Show mobile dropdown menu */
-    }
-}
-
+/* Download Button */
 .download-button {
     background-color: #007acc;
     color: white;
@@ -143,6 +139,32 @@ body {
 
 .download-button:hover {
     background-color: #005fa3;
+}
+
+/* Mobile Actions */
+.mobile-actions {
+    display: none;
+    align-items: center;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .desktop-menu {
+        display: none; /* Hide desktop menu */
+    }
+
+    .navbar {
+        flex-direction: column;
+    }
+
+    .mobile-actions {
+        display: flex; /* Show toggle and download button */
+        gap: 1rem;
+    }
+
+    .mobile-menu.show {
+        display: flex;
+    }
 }
 
 /* Hero Section */
