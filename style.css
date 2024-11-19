@@ -114,18 +114,29 @@ body {
     color: #007acc;
 }
 
-/* Media Queries for Mobile View */
+
+/* Mobile Actions */
+.mobile-actions {
+    display: none;
+    align-items: center;
+}
+
+/* Responsive Design */
 @media (max-width: 768px) {
-    .navbar ul {
-        display: none; /* Hide desktop menu */
+    .desktop-menu {
+        display: none;
     }
 
-    .navbar-toggle {
-        display: block; /* Show toggle button */
+    .navbar {
+        flex-direction: column;
+    }
+
+    .mobile-actions {
+        display: flex;
     }
 
     .mobile-menu.show {
-        display: flex; /* Show mobile dropdown menu */
+        display: flex;
     }
 }
 
