@@ -147,9 +147,11 @@ body {
     display: flex;
     flex-direction: row; /* Đảm bảo các phần tử nằm trên một hàng */
     flex-wrap: nowrap; /* Không cho các phần tử xuống dòng */
-    justify-content: space-between; /* Giữa các phần tử có khoảng cách phù hợp */
+    justify-content: space-between; /* Đặt khoảng cách giữa các phần tử */
     align-items: center; /* Căn giữa theo chiều dọc */
     padding: 0.5rem 1rem; /* Điều chỉnh khoảng cách */
+    width: 100%; /* Đảm bảo navbar không vượt quá chiều rộng màn hình */
+    box-sizing: border-box; /* Bao gồm padding trong chiều rộng */
   }
 
   .navbar-toggle {
@@ -160,27 +162,30 @@ body {
     border: none;
     cursor: pointer;
     order: 1; /* Đặt toggle ở bên trái */
-    margin-right: auto; /* Đẩy toggle sát bên trái */
+    flex-shrink: 0; /* Ngăn toggle bị thu nhỏ */
+    margin-right: 1rem; /* Tạo khoảng cách giữa toggle và logo */
   }
 
   .logo-container {
     order: 2; /* Đặt logo ở giữa */
-    flex-grow: 1; /* Chiếm khoảng trống còn lại giữa toggle và nút tải */
+    flex-grow: 1; /* Chiếm không gian giữa toggle và nút tải */
     display: flex;
     justify-content: center; /* Căn giữa logo */
     align-items: center; /* Căn giữa theo chiều dọc */
-    text-align: center;
+    max-width: 50%; /* Giới hạn chiều rộng logo để tránh tràn */
+    overflow: hidden; /* Ẩn phần dư nếu logo quá dài */
   }
 
   .download-button {
     order: 3; /* Đặt nút tải ở bên phải */
-    margin-left: auto; /* Đẩy nút tải sát lề phải */
+    flex-shrink: 0; /* Ngăn nút tải bị thu nhỏ */
     padding: 0.5rem 1rem;
     font-size: 1rem;
     border-radius: 0.25rem;
     background-color: #007acc;
     color: white;
     text-decoration: none;
+    margin-left: 1rem; /* Tạo khoảng cách giữa logo và nút tải */
     transition: background-color 0.3s ease;
   }
 
