@@ -22,18 +22,12 @@ body {
   position: sticky;
   top: 0;
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
   background-color: white;
   box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.1);
   z-index: 1000;
-}
-
-.navbar-container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 100%;
-  padding: 1rem 2rem;
 }
 
 .logo-container {
@@ -52,7 +46,6 @@ body {
   color: #007acc;
 }
 
-/* Desktop Menu */
 .desktop-menu {
   display: flex;
   list-style: none;
@@ -75,7 +68,6 @@ body {
   font-weight: bold;
 }
 
-/* Mobile Menu */
 .navbar-toggle {
   display: none;
   background-color: transparent;
@@ -83,12 +75,6 @@ body {
   font-size: 2rem;
   color: #007acc;
   cursor: pointer;
-}
-
-.mobile-actions {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
 }
 
 .mobile-menu {
@@ -147,20 +133,39 @@ body {
 /* Responsive Design */
 @media (max-width: 768px) {
   .desktop-menu {
-    display: none;
+    display: none; /* Hide desktop menu on mobile */
+  }
+
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
   }
 
   .navbar-toggle {
-    display: block;
+    display: block; /* Show the toggle button */
   }
 
   .mobile-menu.show {
-    display: flex;
+    display: flex; /* Show mobile dropdown menu */
   }
 
-  .navbar-container {
-    flex-direction: row;
-    justify-content: space-between;
+  .mobile-menu {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .logo-container {
+    order: 1; /* Keep logo at the top */
+  }
+
+  .navbar-toggle {
+    order: 2; /* Place the toggle button to the right of the logo */
+  }
+
+  .download-button {
+    order: 3; /* Move the download button to the right of the toggle */
   }
 }
 
