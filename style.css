@@ -277,3 +277,159 @@ body {
         font-size: 1rem;
     }
 }
+
+/* Chat GPT Section */
+.chat-gpt-section {
+    padding: 4rem 1.5rem;
+    background-color: #eef5ff;
+    text-align: center;
+}
+
+.chat-gpt-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    margin-top: 2rem;
+    flex-wrap: wrap;
+    flex-direction: row; /* Hiển thị ngang mặc định */
+}
+
+.chat-gpt-image {
+    flex: 1;
+    max-width: 300px;
+    text-align: center;
+}
+
+.chat-gpt-image img {
+    width: 100%;
+    max-width: 100%; /* Hình ảnh không vượt quá chiều rộng container */
+    height: auto; /* Giữ nguyên tỷ lệ hình ảnh */
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.chat-gpt-image img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
+}
+
+.chat-gpt-text {
+    flex: 1;
+    max-width: 600px;
+    background-color: white;
+    padding: 2rem;
+    border-radius: 1rem;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    text-align: left;
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #333;
+}
+
+.chat-gpt-text p {
+    margin-bottom: 1.5rem;
+    font-weight: 500;
+}
+
+/* Flash Quiz Section */
+.flash-quiz-section {
+    padding: 4rem 1.5rem;
+    background: linear-gradient(135deg, #f9f9ff, #e3f2fd);
+    text-align: center;
+    border-top: 3px solid #007acc;
+    box-shadow: inset 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.flash-quiz-section h2 {
+    font-size: 2.5rem;
+    color: #005fa3;
+    margin-bottom: 2rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.flash-quiz-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    margin-top: 2rem;
+    flex-direction: row; /* Hiển thị ngang mặc định */
+}
+
+.flash-quiz-text {
+    flex: 1;
+    max-width: 600px;
+    background-color: white;
+    padding: 2rem;
+    border-radius: 1rem;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    text-align: left;
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #333;
+}
+
+.flash-quiz-text p {
+    margin-bottom: 1.5rem;
+    font-weight: 500;
+}
+
+.flash-quiz-image {
+    flex: 1;
+    max-width: 300px;
+    text-align: center;
+}
+
+.flash-quiz-image img {
+    width: 100%;
+    max-width: 100%; /* Hình ảnh không vượt quá chiều rộng container */
+    height: auto; /* Giữ nguyên tỷ lệ */
+    border-radius: 15px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.flash-quiz-image img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
+}
+
+/* Responsive Adjustments for Mobile */
+@media (max-width: 768px) {
+    .chat-gpt-container,
+    .flash-quiz-container {
+        flex-direction: column; /* Hiển thị dọc trên mobile */
+    }
+
+    .chat-gpt-image,
+    .flash-quiz-image {
+        margin-bottom: 1.5rem; /* Thêm khoảng cách giữa hình ảnh và văn bản */
+    }
+
+    .chat-gpt-text,
+    .flash-quiz-text {
+        text-align: center; /* Văn bản căn giữa */
+    }
+}
+
+@media (max-width: 480px) {
+    .chat-gpt-text,
+    .flash-quiz-text {
+        font-size: 1rem;
+    }
+
+    .chat-gpt-image img,
+    .flash-quiz-image img {
+        max-width: 80%; /* Giảm kích thước hình ảnh trên màn hình nhỏ */
+        margin: 0 auto;
+    }
+
+    .flash-quiz-section h2 {
+        font-size: 2rem;
+    }
+}
