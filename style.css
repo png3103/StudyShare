@@ -488,11 +488,10 @@ body {
 
 .flash-quiz-container {
     display: flex;
-    flex-wrap: wrap;
     justify-content: center;
     align-items: center;
     gap: 2rem;
-    flex-direction: column; /* Default for all screen sizes */
+    flex-wrap: nowrap; /* Không cho nội dung xuống dòng trên desktop */
 }
 
 .flash-quiz-image {
@@ -503,8 +502,8 @@ body {
 
 .flash-quiz-image img {
     width: 100%;
-    max-width: 100%; /* Ensure image does not exceed container width */
-    height: auto; /* Maintain aspect ratio */
+    max-width: 100%; /* Đảm bảo hình ảnh không vượt quá chiều rộng container */
+    height: auto; /* Giữ tỷ lệ hình ảnh */
     border-radius: 15px;
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -522,11 +521,10 @@ body {
     padding: 2rem;
     border-radius: 1rem;
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
-    text-align: left;
+    text-align: left; /* Giữ văn bản căn trái trên desktop */
     font-size: 1.1rem;
     line-height: 1.8;
     color: #333;
-    text-align: center;
 }
 
 .flash-quiz-text p {
@@ -537,27 +535,27 @@ body {
 /* Responsive Design for Flash Quiz Section */
 @media (max-width: 768px) {
     .flash-quiz-container {
-        flex-direction: column; /* Stack content vertically on mobile */
-        gap: 1.5rem; /* Reduce gap for better layout */
+        flex-direction: column; /* Đặt ảnh trên và nội dung dưới khi ở chế độ mobile */
+        gap: 1.5rem; /* Khoảng cách giữa ảnh và nội dung */
     }
 
     .flash-quiz-text {
-        text-align: center; /* Center-align text for mobile */
+        text-align: center; /* Căn giữa văn bản trên mobile */
     }
 }
 
 @media (max-width: 480px) {
     .flash-quiz-section h2 {
-        font-size: 2rem; /* Reduce title size for small screens */
+        font-size: 2rem; /* Giảm kích thước tiêu đề trên màn hình nhỏ */
     }
 
     .flash-quiz-text {
-        font-size: 1rem; /* Reduce text size for readability */
-        padding: 1.5rem; /* Adjust padding for smaller screens */
+        font-size: 1rem; /* Giảm kích thước văn bản */
+        padding: 1.5rem; /* Giảm padding trên màn hình nhỏ */
     }
 
     .flash-quiz-image img {
-        max-width: 80%; /* Reduce image size for small screens */
-        margin: 0 auto; /* Center the image */
+        max-width: 80%; /* Giảm kích thước hình ảnh trên màn hình nhỏ */
+        margin: 0 auto; /* Căn giữa hình ảnh */
     }
 }
