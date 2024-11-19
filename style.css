@@ -138,6 +138,7 @@ body {
 }
 
 /* Responsive Design */
+/* Responsive Design for Navbar */
 @media (max-width: 768px) {
   .desktop-menu {
     display: none; /* Ẩn menu desktop trên mobile */
@@ -145,9 +146,10 @@ body {
 
   .navbar {
     display: flex;
-    flex-direction: row; /* Đảm bảo các phần tử nằm ngang */
-    justify-content: space-between; /* Phân bổ khoảng cách đều giữa các phần tử */
-    align-items: center; /* Căn giữa các phần tử theo chiều dọc */
+    flex-direction: row; /* Căn ngang các phần tử */
+    flex-wrap: nowrap; /* Không cho các phần tử xuống dòng */
+    justify-content: space-between; /* Phân bổ khoảng cách hợp lý */
+    align-items: center; /* Căn giữa theo chiều dọc */
     padding: 0.5rem 1rem; /* Tạo khoảng cách phù hợp */
     width: 100%; /* Đảm bảo chiều rộng navbar bao phủ toàn màn hình */
     box-sizing: border-box; /* Bao gồm padding trong chiều rộng */
@@ -157,7 +159,7 @@ body {
     display: block; /* Hiển thị nút toggle */
     order: 1; /* Đặt toggle ở bên trái */
     font-size: 1.5rem;
-    margin-right: 1rem; /* Tạo khoảng cách giữa toggle và logo */
+    margin-right: 0.5rem; /* Tạo khoảng cách giữa toggle và logo */
     flex-shrink: 0; /* Ngăn toggle bị thu nhỏ */
   }
 
@@ -167,26 +169,29 @@ body {
     display: flex;
     justify-content: center; /* Căn giữa logo trong container */
     align-items: center; /* Căn giữa theo chiều dọc */
-    max-width: 50%; /* Đảm bảo logo không chiếm quá nhiều không gian */
+    text-align: center;
+    max-width: 60%; /* Giới hạn chiều rộng logo */
   }
 
   .app-logo {
-    width: 2rem; /* Giảm kích thước logo icon nếu cần */
+    width: 2rem; /* Kích thước logo icon */
     height: 2rem;
     margin-right: 0.5rem; /* Khoảng cách giữa logo icon và text */
   }
 
   .logo {
-    font-size: 1rem; /* Giảm kích thước text logo trên màn hình nhỏ */
+    font-size: 1rem; /* Kích thước text logo */
     white-space: nowrap; /* Ngăn text bị xuống dòng */
+    overflow: hidden;
+    text-overflow: ellipsis; /* Xử lý trường hợp text quá dài */
   }
 
   .download-button {
     order: 3; /* Đặt nút tải xuống ở bên phải */
     flex-shrink: 0; /* Ngăn nút tải bị thu nhỏ */
     padding: 0.5rem 1rem;
-    font-size: 0.9rem; /* Giảm kích thước chữ nếu cần */
-    margin-left: 1rem; /* Tạo khoảng cách giữa logo và nút tải */
+    font-size: 0.9rem; /* Kích thước chữ trên nút tải */
+    margin-left: 0.5rem; /* Tạo khoảng cách giữa logo và nút tải */
     border-radius: 0.25rem;
     background-color: #007acc;
     color: white;
