@@ -5,9 +5,7 @@
   box-sizing: border-box;
 }
 
-html {
-  font-size: 16px;
-}
+
 
 body {
   font-family: Arial, sans-serif;
@@ -33,6 +31,8 @@ body {
 .logo-container {
   display: flex;
   align-items: center;
+  flex-grow: 1; /* Để logo ở giữa */
+  justify-content: center; /* Căn giữa logo */
 }
 
 .app-logo {
@@ -44,13 +44,13 @@ body {
 .logo {
   font-size: 1.5rem;
   color: #007acc;
+  white-space: nowrap; /* Ngăn logo xuống dòng */
 }
 
 .nav-links {
   display: flex;
   align-items: center;
-  flex: 1;
-  justify-content: center; /* Center the navigation links */
+  justify-content: space-between;
 }
 
 .desktop-menu {
@@ -92,7 +92,7 @@ body {
 }
 
 .navbar-toggle {
-  display: none;
+  display: none; /* Mặc định ẩn toggle trên desktop */
   background-color: transparent;
   border: none;
   font-size: 2rem;
@@ -137,6 +137,7 @@ body {
   color: #007acc;
 }
 
+/* Responsive Design (Mobile-specific) */
 @media (max-width: 768px) {
   .desktop-menu {
     display: none; /* Ẩn menu desktop trên mobile */
@@ -144,62 +145,70 @@ body {
 
   .navbar {
     display: flex;
-    flex-direction: row; /* Đảm bảo các phần tử nằm ngang */
-    flex-wrap: nowrap; /* Không cho các phần tử xuống dòng */
-    justify-content: space-between; /* Giữa các phần tử có khoảng cách hợp lý */
-    align-items: center; /* Căn giữa theo chiều dọc */
-    padding: 0.5rem 1rem; /* Điều chỉnh khoảng cách */
-    width: 100%; /* Đảm bảo navbar chiếm toàn bộ chiều rộng */
-    box-sizing: border-box; /* Bao gồm padding trong chiều rộng */
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: nowrap;
+    padding: 0.5rem 1rem;
+    width: 100%;
+    box-sizing: border-box;
   }
 
   .navbar-toggle {
-    display: block; /* Hiển thị nút toggle */
+    display: block; /* Hiển thị toggle trên mobile */
     font-size: 1.5rem;
     color: #007acc;
     background: none;
     border: none;
     cursor: pointer;
-    order: 1; /* Đặt nút toggle ở bên trái */
-    flex-shrink: 0; /* Ngăn toggle bị thu nhỏ */
-    margin-right: 1rem; /* Tạo khoảng cách giữa toggle và logo */
+    margin-right: 1rem;
+    flex-shrink: 0;
   }
 
   .logo-container {
     order: 2; /* Đặt logo ở giữa */
-    flex-grow: 1; /* Chiếm không gian còn lại giữa toggle và nút tải */
+    flex-grow: 1;
     display: flex;
-    justify-content: center; /* Căn giữa logo */
-    align-items: center; /* Căn giữa theo chiều dọc */
-    text-align: center;
+    justify-content: center;
+    align-items: center;
   }
 
   .app-logo {
-    width: 2rem; /* Đảm bảo logo icon không quá lớn */
+    width: 2rem;
     height: 2rem;
-    margin-right: 0.5rem; /* Khoảng cách giữa logo icon và tên */
+    margin-right: 0.5rem;
   }
 
   .logo {
-    font-size: 1.2rem; /* Điều chỉnh kích thước logo text */
-    white-space: nowrap; /* Ngăn logo xuống dòng */
+    font-size: 1.2rem;
   }
 
   .download-button {
-    order: 3; /* Đặt nút tải xuống ở bên phải */
-    flex-shrink: 0; /* Ngăn nút tải xuống bị thu nhỏ */
+    order: 3; /* Đặt nút tải ở bên phải */
     padding: 0.5rem 1rem;
     font-size: 1rem;
+    margin-left: 1rem;
     border-radius: 0.25rem;
     background-color: #007acc;
     color: white;
     text-decoration: none;
-    margin-left: 1rem; /* Tạo khoảng cách giữa logo và nút tải */
-    transition: background-color 0.3s ease;
   }
 
-  .download-button:hover {
-    background-color: #005fa3;
+  .mobile-menu {
+    display: none;
+  }
+
+  .mobile-menu.show {
+    display: flex; /* Hiển thị menu khi toggle được kích hoạt */
+    flex-direction: column;
+    align-items: flex-start;
+    background-color: white;
+    width: 100%;
+    padding: 1rem 0;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 999;
+    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.1);
   }
 }
 
