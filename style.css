@@ -492,8 +492,26 @@ body {
     justify-content: center;
     align-items: center;
     gap: 2rem;
-    margin-top: 2rem;
-    flex-direction: row; /* Hiển thị ngang mặc định */
+}
+
+.flash-quiz-image {
+    flex: 1;
+    max-width: 300px;
+    text-align: center;
+}
+
+.flash-quiz-image img {
+    width: 100%;
+    max-width: 100%; /* Ensure image does not exceed container width */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 15px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.flash-quiz-image img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
 }
 
 .flash-quiz-text {
@@ -514,40 +532,35 @@ body {
     font-weight: 500;
 }
 
-.flash-quiz-image {
-    flex: 1;
-    max-width: 300px;
-    text-align: center;
-}
+/* Responsive Design for Flash Quiz Section */
+@media (max-width: 768px) {
+    .flash-quiz-container {
+        flex-direction: column; /* Stack the content vertically on mobile */
+        gap: 1rem; /* Reduce gap for better layout */
+    }
 
-.flash-quiz-image img {
-    width: 100%;
-    max-width: 100%; /* Hình ảnh không vượt quá chiều rộng container */
-    height: auto; /* Giữ nguyên tỷ lệ */
-    border-radius: 15px;
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
+    .flash-quiz-image {
+        order: 1; /* Ensure image appears above text */
+    }
 
-.flash-quiz-image img:hover {
-    transform: scale(1.05);
-    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
+    .flash-quiz-text {
+        order: 2; /* Ensure text appears below image */
+        text-align: center; /* Center-align text for mobile */
+    }
 }
-
 
 @media (max-width: 480px) {
-    .chat-gpt-text,
-    .flash-quiz-text {
-        font-size: 1rem;
-    }
-
-    .chat-gpt-image img,
-    .flash-quiz-image img {
-        max-width: 80%; /* Giảm kích thước hình ảnh trên màn hình nhỏ */
-        margin: 0 auto;
-    }
-
     .flash-quiz-section h2 {
-        font-size: 2rem;
+        font-size: 2rem; /* Reduce title size for small screens */
+    }
+
+    .flash-quiz-text {
+        font-size: 1rem; /* Reduce text size for readability */
+        padding: 1.5rem; /* Adjust padding for smaller screens */
+    }
+
+    .flash-quiz-image img {
+        max-width: 80%; /* Reduce image size for small screens */
+        margin: 0 auto; /* Center the image */
     }
 }
