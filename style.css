@@ -574,7 +574,7 @@ body {
 .flash-quiz-container {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 3rem; /* Tăng khoảng cách giữa ảnh và nội dung */
+    gap: 1.5rem; /* Tăng khoảng cách giữa ảnh và nội dung */
     align-items: center;
 }
 
