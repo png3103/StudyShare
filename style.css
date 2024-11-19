@@ -18,7 +18,7 @@ body {
   position: sticky;
   top: 0;
   display: flex;
-  justify-content: space-between; /* Đảm bảo các phần tử đều có khoảng cách phù hợp */
+  justify-content: space-between; /* Đảm bảo các phần tử nằm trên cùng một hàng */
   align-items: center; /* Căn giữa theo chiều dọc */
   padding: 1rem 2rem;
   background-color: white;
@@ -26,12 +26,21 @@ body {
   z-index: 1000;
 }
 
+.navbar-toggle {
+  display: none; /* Mặc định ẩn trên desktop */
+  font-size: 2rem;
+  color: #007acc;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+/* Logo Container */
 .logo-container {
   display: flex;
   align-items: center;
   justify-content: center;
-  flex-grow: 1; /* Chiếm khoảng trống còn lại giữa toggle và nút tải */
-  text-align: center;
+  flex-grow: 1;
 }
 
 .app-logo {
@@ -43,20 +52,14 @@ body {
 .logo {
   font-size: 1.5rem;
   color: #007acc;
-  white-space: nowrap; /* Ngăn logo xuống dòng */
+  white-space: nowrap;
 }
 
-.nav-links {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-grow: 1;
-}
-
+/* Desktop Menu */
 .desktop-menu {
   display: flex;
-  list-style: none;
   gap: 2rem;
+  list-style: none;
 }
 
 .desktop-menu li a {
@@ -75,6 +78,7 @@ body {
   font-weight: bold;
 }
 
+/* Download Button */
 .download-button {
   background-color: #007acc;
   color: white;
@@ -91,28 +95,18 @@ body {
   background-color: #005fa3;
 }
 
-.navbar-toggle {
-  display: none; /* Mặc định ẩn trên desktop */
-  background-color: transparent;
-  border: none;
-  font-size: 2rem;
-  color: #007acc;
-  cursor: pointer;
-  margin-right: 1rem; /* Tạo khoảng cách giữa toggle và các phần tử khác */
-}
-
 /* Mobile Menu */
 .mobile-menu {
-  display: none; /* Mặc định ẩn menu trên mobile */
+  display: none;
   flex-direction: column;
   align-items: flex-start;
   background-color: white;
   width: 100%;
   padding: 1rem 0;
-  box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.1);
   position: absolute;
   top: 100%;
   left: 0;
+  box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.1);
   z-index: 999;
 }
 
@@ -127,7 +121,6 @@ body {
 }
 
 .mobile-menu li a {
-  width: 100%;
   text-decoration: none;
   color: #333;
   font-weight: 500;
@@ -138,27 +131,22 @@ body {
   color: #007acc;
 }
 
-/* Responsive Design (Mobile-specific) */
+/* Responsive Design */
 @media (max-width: 768px) {
   .desktop-menu {
     display: none; /* Ẩn menu desktop trên mobile */
   }
 
   .navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0.5rem 1rem;
+    justify-content: space-between; /* Đảm bảo toggle, logo, và nút tải nằm ngang */
   }
 
   .navbar-toggle {
     display: block; /* Hiển thị toggle trên mobile */
-    font-size: 1.5rem;
   }
 
   .logo-container {
-    order: 2; /* Đặt logo ở giữa */
-    flex-grow: 1;
+    flex-grow: 1; /* Đặt logo nằm giữa */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -175,13 +163,12 @@ body {
   }
 
   .download-button {
-    order: 3; /* Nút tải xuống nằm bên phải */
     padding: 0.5rem 1rem;
-    margin-left: 1rem;
+    font-size: 1rem;
   }
 
   .mobile-menu {
-    display: none; /* Mặc định ẩn menu mobile */
+    display: none;
   }
 
   .mobile-menu.show {
