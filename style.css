@@ -145,19 +145,29 @@ body {
 
   .navbar {
     flex-wrap: wrap;
+    justify-content: space-between;
   }
 
   .navbar-toggle {
     display: block; /* Show the toggle button */
+    order: 1; /* Place toggle button first */
+  }
+
+  .logo-container {
+    order: 2; /* Place logo container in the center */
+    flex: 1;
+    justify-content: center; /* Center logo container */
+    display: flex;
+  }
+
+  .download-button {
+    order: 3; /* Place download button last */
+    margin-top: 0.5rem;
+    align-self: flex-end; /* Align download button to the end */
   }
 
   .mobile-menu.show {
     display: flex; /* Show mobile dropdown menu */
-  }
-
-  .download-button {
-    order: 3;
-    margin-top: 0.5rem;
   }
 }
 
