@@ -238,24 +238,24 @@ body {
 /* Main Section */
 .main-section {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between; /* Ensure proper spacing between elements */
     align-items: center;
-    padding: 1rem 0.5rem; /* Adjusted padding for smaller spacing */
-    gap: 1.5rem; /* Reduced gap */
+    padding: 2rem; /* Adjusted padding for desktop */
+    gap: 3rem; /* Added more space between app-demo and features-section */
     background-color: #f3f8ff;
-    flex-wrap: wrap;
+    flex-wrap: nowrap; /* Ensure elements stay in a row for desktop */
 }
 
 .app-demo {
     flex: 1;
     display: flex;
     justify-content: flex-end;
-    max-width: 50%;
+    max-width: 45%; /* Adjusted for consistent spacing */
 }
 
 .app-demo-image {
     width: 100%;
-  max-width: 14rem;
+    max-width: 14rem;
     border-radius: 1rem;
     box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -266,10 +266,11 @@ body {
     box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.3);
 }
 
+
 .features-section {
     flex: 1;
     padding: 1rem;
-    max-width: 50%;
+    max-width: 45%; /* Adjusted for consistent spacing */
 }
 
 .features-section h2 {
@@ -294,6 +295,7 @@ body {
     transform: translateY(-0.25rem);
     box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
 }
+
 
 .feature-icon {
     width: 3rem;
@@ -548,7 +550,7 @@ body {
 
 /* Flash Quiz Section */
 .flash-quiz-section {
-     padding: 2rem 2rem;  /* Reduced spacing */
+    padding: 2rem; /* Reduced padding */
     background: linear-gradient(135deg, #f9f9ff, #e3f2fd);
     text-align: center;
     border-top: 3px solid #007acc;
@@ -567,22 +569,22 @@ body {
 .flash-quiz-container {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 1rem; /* Tăng khoảng cách giữa ảnh và nội dung */
+    gap: 2rem; /* Reduced gap for better alignment */
     align-items: center;
+    justify-content: center; /* Center-align the content */
 }
 
 .flash-quiz-image {
-    grid-column: 1; /* Đặt ảnh luôn ở cột 1 */
-    flex: 1;
-    justify-self: center; /* Đảm bảo ảnh luôn ở giữa cột */
+    grid-column: 1; /* Ensure image stays in the first column */
+    justify-self: center; /* Center-align the image */
 }
 
 .flash-quiz-image img {
     width: 100%;
- max-width: 13rem; /* Giới hạn kích thước hình ảnh */
-    height: auto; /* Giữ tỷ lệ hình ảnh */
+    max-width: 12rem; /* Adjusted size for better alignment */
+    height: auto;
     border-radius: 0.5rem;
-   box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -592,16 +594,17 @@ body {
 }
 
 .flash-quiz-text {
-    grid-column: 2; /* Đặt nội dung luôn ở cột 2 */
-     max-width: 50%;
+    grid-column: 2; /* Ensure text stays in the second column */
+    max-width: 80%; /* Reduced max-width for better alignment */
     background-color: white;
-    padding: 2rem;
+    padding: 1.5rem; /* Reduced padding for compactness */
     border-radius: 1rem;
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
-    text-align: left; /* Căn trái nội dung */
+    text-align: left;
     font-size: 1.1rem;
     line-height: 1.8;
     color: #333;
+    margin: 0 auto; /* Center-align the text */
 }
 
 .flash-quiz-text p {
