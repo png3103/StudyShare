@@ -6,7 +6,6 @@
 }
 
 
-
 body {
   font-family: Arial, sans-serif;
   background-color: #f3f8ff;
@@ -20,7 +19,7 @@ body {
   position: sticky;
   top: 0;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-between; /* Căn đều khoảng cách giữa các phần tử */
   align-items: center;
   padding: 1rem 2rem;
   background-color: white;
@@ -31,8 +30,7 @@ body {
 .logo-container {
   display: flex;
   align-items: center;
-  flex-grow: 1; /* Để logo ở giữa */
-  justify-content: center; /* Căn giữa logo */
+  flex-shrink: 0; /* Ngăn logo bị thu nhỏ */
 }
 
 .app-logo {
@@ -50,7 +48,8 @@ body {
 .nav-links {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
+  flex-grow: 1; /* Giúp phần tử này chiếm khoảng trống ở giữa */
 }
 
 .desktop-menu {
@@ -92,7 +91,7 @@ body {
 }
 
 .navbar-toggle {
-  display: none; /* Mặc định ẩn toggle trên desktop */
+  display: none; /* Mặc định ẩn trên desktop */
   background-color: transparent;
   border: none;
   font-size: 2rem;
@@ -102,7 +101,7 @@ body {
 
 /* Mobile Menu */
 .mobile-menu {
-  display: none;
+  display: none; /* Mặc định ẩn menu trên mobile */
   flex-direction: column;
   align-items: flex-start;
   background-color: white;
@@ -156,16 +155,12 @@ body {
   .navbar-toggle {
     display: block; /* Hiển thị toggle trên mobile */
     font-size: 1.5rem;
-    color: #007acc;
-    background: none;
-    border: none;
-    cursor: pointer;
     margin-right: 1rem;
     flex-shrink: 0;
   }
 
   .logo-container {
-    order: 2; /* Đặt logo ở giữa */
+    order: 2;
     flex-grow: 1;
     display: flex;
     justify-content: center;
@@ -183,32 +178,18 @@ body {
   }
 
   .download-button {
-    order: 3; /* Đặt nút tải ở bên phải */
+    order: 3;
     padding: 0.5rem 1rem;
     font-size: 1rem;
     margin-left: 1rem;
-    border-radius: 0.25rem;
-    background-color: #007acc;
-    color: white;
-    text-decoration: none;
   }
 
   .mobile-menu {
-    display: none;
+    display: none; /* Mặc định ẩn menu mobile */
   }
 
   .mobile-menu.show {
     display: flex; /* Hiển thị menu khi toggle được kích hoạt */
-    flex-direction: column;
-    align-items: flex-start;
-    background-color: white;
-    width: 100%;
-    padding: 1rem 0;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    z-index: 999;
-    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.1);
   }
 }
 
