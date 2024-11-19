@@ -18,8 +18,8 @@ body {
   position: sticky;
   top: 0;
   display: flex;
-  justify-content: space-between; /* Căn đều khoảng cách giữa các phần tử */
-  align-items: center;
+  justify-content: space-between; /* Đảm bảo các phần tử đều có khoảng cách phù hợp */
+  align-items: center; /* Căn giữa theo chiều dọc */
   padding: 1rem 2rem;
   background-color: white;
   box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.1);
@@ -29,7 +29,9 @@ body {
 .logo-container {
   display: flex;
   align-items: center;
-  flex-shrink: 0; /* Ngăn logo bị thu nhỏ */
+  justify-content: center;
+  flex-grow: 1; /* Chiếm khoảng trống còn lại giữa toggle và nút tải */
+  text-align: center;
 }
 
 .app-logo {
@@ -48,7 +50,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  flex-grow: 1; /* Giúp phần tử này chiếm khoảng trống ở giữa */
+  flex-grow: 1;
 }
 
 .desktop-menu {
@@ -96,6 +98,7 @@ body {
   font-size: 2rem;
   color: #007acc;
   cursor: pointer;
+  margin-right: 1rem; /* Tạo khoảng cách giữa toggle và các phần tử khác */
 }
 
 /* Mobile Menu */
@@ -145,17 +148,12 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    flex-wrap: nowrap;
     padding: 0.5rem 1rem;
-    width: 100%;
-    box-sizing: border-box;
   }
 
   .navbar-toggle {
     display: block; /* Hiển thị toggle trên mobile */
     font-size: 1.5rem;
-    margin-right: 1rem;
-    flex-shrink: 0;
   }
 
   .logo-container {
@@ -177,9 +175,8 @@ body {
   }
 
   .download-button {
-    order: 3; /* Nút tải xuống bên phải */
+    order: 3; /* Nút tải xuống nằm bên phải */
     padding: 0.5rem 1rem;
-    font-size: 1rem;
     margin-left: 1rem;
   }
 
