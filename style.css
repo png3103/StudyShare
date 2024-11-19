@@ -50,7 +50,7 @@ body {
   display: flex;
   align-items: center;
   flex: 1;
-  justify-content: center;
+  justify-content: center; /* Center the navigation links */
 }
 
 .desktop-menu {
@@ -137,10 +137,10 @@ body {
   color: #007acc;
 }
 
-/* Responsive Navbar */
+/* Responsive Design */
 @media (max-width: 768px) {
   .desktop-menu {
-    display: none;
+    display: none; /* Hide desktop menu on mobile */
   }
 
   .navbar {
@@ -148,11 +148,11 @@ body {
   }
 
   .navbar-toggle {
-    display: block;
+    display: block; /* Show the toggle button */
   }
 
   .mobile-menu.show {
-    display: flex;
+    display: flex; /* Show mobile dropdown menu */
   }
 
   .download-button {
@@ -163,183 +163,493 @@ body {
 
 /* Hero Section */
 .hero-section {
-  position: relative;
-  text-align: center;
-  padding: 5rem 1.25rem;
-  background-color: #007acc;
-  color: white;
-  transition: background-color 0.5s ease-in-out;
+    position: relative;
+    text-align: center;
+    padding: 5rem 1.25rem;
+    background-color: #007acc;
+    color: white;
+    transition: background-color 0.5s ease-in-out;
 }
 
 .hero-title {
-  font-size: 3rem;
-  font-weight: bold;
-  margin-bottom: 1rem;
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
 }
 
 .hero-subtitle {
-  font-size: 1.25rem;
-  margin-bottom: 2rem;
-  color: #eaf4fc;
+    font-size: 1.25rem;
+    margin-bottom: 2rem;
+    color: #eaf4fc;
 }
 
+/* Announcement Section */
 .hero-announcement {
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-  margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 20px;
 }
 
 .png-innovative, .coming-soon {
-  background-color: white;
-  color: #007acc;
-  padding: 15px 25px;
-  border-radius: 8px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-  text-align: center;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background-color: white;
+    color: #007acc;
+    padding: 15px 25px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .png-innovative:hover, .coming-soon:hover {
-  transform: scale(1.05);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+    transform: scale(1.05);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
 }
+
+.png-innovative p, .coming-soon p {
+    font-size: 0.9em;
+    font-weight: 500;
+}
+
+.png-innovative h2, .coming-soon h2 {
+    font-size: 1.5em;
+    font-weight: bold;
+    margin-top: 5px;
+}
+
+.coming-soon h2 {
+    color: #007acc; /* No highlight color, neutral styling */
+}
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .hero-title {
+      font-size: 2.5em;
+    }
+  
+    .hero-announcement {
+      flex-direction: column;
+      gap: 20px;
+    }
+  }
+
+
 
 /* Main Section */
 .main-section {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1rem 2rem;
-  gap: 1.5rem;
-  background-color: #f3f8ff;
-  flex-wrap: wrap;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 1rem 0.5rem; /* Adjusted padding for smaller spacing */
+    gap: 1.5rem; /* Reduced gap */
+    background-color: #f3f8ff;
+    flex-wrap: wrap;
 }
 
 .app-demo {
-  flex: 1;
-  display: flex;
-  justify-content: flex-end;
-  max-width: 45%;
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+    max-width: 50%;
 }
 
 .app-demo-image {
-  width: 100%;
-  max-width: 13rem;
-  border-radius: 1rem;
-  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
+    width: 100%;
+  max-width: 14rem;
+    border-radius: 1rem;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.app-demo-image:hover {
+    transform: scale(1.05);
+    box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.3);
 }
 
 .features-section {
-  flex: 1;
-  padding: 1rem;
-  max-width: 45%;
+    flex: 1;
+    padding: 1rem;
+    max-width: 50%;
 }
 
 .features-section h2 {
-  font-size: 1.5rem;
-  color: #007acc;
-  margin-bottom: 1rem;
+    font-size: 1.5rem;
+    color: #007acc;
+    margin-bottom: 1rem;
 }
 
 .feature-item {
-  display: flex;
-  gap: 1rem;
-  align-items: center;
-  padding: 1rem;
-  background-color: white;
-  border-radius: 0.5rem;
-  box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.1);
-  margin-bottom: 1rem;
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    padding: 1rem;
+    background-color: white;
+    border-radius: 0.5rem;
+    box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    margin-bottom: 1rem;
+}
+
+.feature-item:hover {
+    transform: translateY(-0.25rem);
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
 }
 
 .feature-icon {
-  width: 3rem;
-  height: 3rem;
+    width: 3rem;
+    height: 3rem;
 }
 
-/* StudyPal AI Section */
+.feature-text h3 {
+    font-size: 1.25rem;
+    color: #007acc;
+}
+
+.feature-text p {
+    font-size: 1rem;
+    color: #555;
+}
+
+/* Hero Section */
+.hero-section {
+    position: relative;
+    text-align: center;
+    padding: 5rem 2rem; /* Đảm bảo phù hợp trên desktop và mobile */
+    background-color: #007acc;
+    color: white;
+    transition: background-color 0.5s ease-in-out;
+}
+
+/* Hero Content */
+.hero-content {
+    position: relative;
+    max-width: 1200px;
+    margin: 0 auto; /* Căn giữa nội dung */
+    transition: opacity 0.5s ease-in-out;
+}
+
+.hero-title {
+    font-size: 3rem; /* Kích thước lớn trên desktop */
+    font-weight: bold;
+    margin-bottom: 1rem;
+    line-height: 1.2; /* Tạo khoảng cách tốt hơn giữa các dòng */
+}
+
+.hero-title .highlight {
+    color: white;
+    position: relative;
+    display: inline-block;
+    text-decoration: none;
+}
+
+.hero-subtitle {
+    font-size: 1.2rem; /* Phù hợp trên desktop */
+    margin-bottom: 2rem;
+    color: #eaf4fc;
+    line-height: 1.6;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .hero-section {
+        padding: 4rem 1.5rem; /* Giảm khoảng cách trên mobile */
+    }
+
+    .hero-title {
+        font-size: 2rem; /* Thu nhỏ tiêu đề trên mobile */
+    }
+
+    .hero-subtitle {
+        font-size: 1rem; /* Thu nhỏ phụ đề trên mobile */
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-title {
+        font-size: 1.8rem; /* Kích thước nhỏ hơn cho màn hình rất nhỏ */
+    }
+
+    .hero-subtitle {
+        font-size: 0.9rem; /* Phụ đề nhỏ hơn cho màn hình rất nhỏ */
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 1rem;
+    }
+
+    .navbar ul {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .hero-title {
+        font-size: 1.75rem;
+    }
+
+    .hero-subtitle {
+        font-size: 1rem;
+    }
+
+    .hero-announcement {
+        flex-direction: column;
+    }
+
+    .main-section {
+        flex-direction: column;
+    }
+
+    .app-demo, .features-section {
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .navbar ul {
+        gap: 0.5rem;
+    }
+
+    .app-logo {
+        width: 2rem;
+        height: 2rem;
+    }
+
+    .hero-title {
+        font-size: 1.5rem;
+    }
+
+    .hero-subtitle {
+        font-size: 0.9rem;
+    }
+
+    .announcement-box {
+        padding: 1rem;
+    }
+
+    .features-section h2 {
+        font-size: 1.25rem;
+    }
+
+    .feature-text h3 {
+        font-size: 1rem;
+    }
+}
+
+/* StudyPal AI Integration Section */
 .studypal-integration {
-  padding: 3rem 2rem;
-  background-color: #eaf4fc;
-  text-align: center;
+    padding: 50px 20px;
+    background-color: #eaf4fc; /* Light blue background for emphasis */
+    text-align: center;
+}
+
+.studypal-integration h2 {
+    font-size: 2.2em;
+    color: #007acc;
+    margin-bottom: 20px;
+    font-weight: bold;
+    text-transform: uppercase;
 }
 
 .studypal-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-  gap: 1.5rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 40px; /* Tăng khoảng cách giữa ảnh và nội dung */
 }
 
 .studypal-text {
-  flex: 1;
-  max-width: 600px;
-  font-size: 1.2em;
+    flex: 1;
+    max-width: 600px;
+    font-size: 1.2em;
+    line-height: 1.8;
+    color: #333;
+    text-align: left;
+}
+
+.studypal-text p {
+    margin-bottom: 15px;
+}
+
+.studypal-text ul {
+    margin: 15px 0;
+    padding-left: 20px;
+    text-align: left;
+    list-style-type: disc;
+    color: #333;
+    font-size: 1em;
+    line-height: 1.6;
+}
+
+.studypal-text ul li {
+    margin-bottom: 10px;
+}
+
+/* Styling for the Image */
+.studypal-image {
+    flex: 1;
+    max-width: 350px; /* Adjust for a slightly larger image */
+    text-align: center;
 }
 
 .studypal-image img {
-  width: 100%;
-  max-width: 350px;
-  border-radius: 15px;
-  box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.2);
+    width: 100%;
+    max-width: 450px;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.studypal-image img:hover {
+    transform: scale(1.05); /* Slight zoom on hover */
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4); /* Stronger shadow on hover */
+}
+
+/* Responsive Design for StudyPal */
+@media (max-width: 768px) {
+    .studypal-container {
+        flex-direction: column; /* Stack the content vertically */
+        gap: 20px; /* Reduce gap between items */
+    }
+
+    .studypal-image {
+        order: 1; /* Ensure image appears first */
+    }
+
+    .studypal-text {
+        order: 2; /* Ensure text appears below image */
+        text-align: center; /* Center-align text on mobile */
+    }
+
+    .studypal-text p,
+    .studypal-text ul {
+        text-align: justify; /* Justify text for better readability */
+    }
+}
+
+@media (max-width: 480px) {
+    .studypal-integration h2 {
+        font-size: 1.8em; /* Slightly smaller title on very small screens */
+    }
+
+    .studypal-text {
+        font-size: 1em; /* Reduce text size */
+        line-height: 1.6; /* Adjust line height for smaller screens */
+    }
+
+    .studypal-image img {
+        max-width: 300px; /* Reduce image size on very small screens */
+    }
 }
 
 /* Flash Quiz Section */
 .flash-quiz-section {
-  padding: 2rem 2rem;
-  background: linear-gradient(135deg, #f9f9ff, #e3f2fd);
-  text-align: center;
+     padding: 2rem 2rem;  /* Reduced spacing */
+    background: linear-gradient(135deg, #f9f9ff, #e3f2fd);
+    text-align: center;
+    border-top: 3px solid #007acc;
+    box-shadow: inset 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.flash-quiz-section h2 {
+    font-size: 2.5rem;
+    color: #005fa3;
+    margin-bottom: 2rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
 }
 
 .flash-quiz-container {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 1.5rem;
-  align-items: center;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem; /* Tăng khoảng cách giữa ảnh và nội dung */
+    align-items: center;
+}
+
+.flash-quiz-image {
+    grid-column: 1; /* Đặt ảnh luôn ở cột 1 */
+    flex: 1;
+    justify-self: center; /* Đảm bảo ảnh luôn ở giữa cột */
 }
 
 .flash-quiz-image img {
-  max-width: 13rem;
-  border-radius: 0.5rem;
+    width: 100%;
+ max-width: 13rem; /* Giới hạn kích thước hình ảnh */
+    height: auto; /* Giữ tỷ lệ hình ảnh */
+    border-radius: 0.5rem;
+   box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.flash-quiz-image img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
 }
 
 .flash-quiz-text {
-  background-color: white;
-  padding: 1.5rem;
-  border-radius: 1rem;
-  max-width: 50%;
+    grid-column: 2; /* Đặt nội dung luôn ở cột 2 */
+     max-width: 50%;
+    background-color: white;
+    padding: 2rem;
+    border-radius: 1rem;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    text-align: left; /* Căn trái nội dung */
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #333;
 }
 
-/* Responsive Adjustments */
+.flash-quiz-text p {
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+}
+
+/* Responsive Design for Mobile */
 @media (max-width: 768px) {
-  .main-section {
-    flex-direction: column;
-    align-items: center;
-    gap: 1.5rem;
-  }
+    .main-section {
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+    }
 
-  .flash-quiz-container {
-    grid-template-columns: 1fr;
-  }
+    .flash-quiz-container {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
 
-  .flash-quiz-text {
-    max-width: 90%;
-  }
+    .flash-quiz-image img {
+        max-width: 80%; /* Adjusted for mobile */
+        margin: 0 auto;
+    }
+
+    .flash-quiz-text {
+        max-width: 90%; /* Adjusted for mobile */
+        padding: 1rem;
+    }
 }
+
 
 @media (max-width: 480px) {
-  .flash-quiz-section {
-    padding: 1rem;
-  }
+    .main-section {
+        padding: 1rem;
+    }
 
-  .flash-quiz-container {
-    grid-template-columns: 1fr;
-  }
+    .flash-quiz-section {
+        padding: 1rem;
+    }
 
-  .flash-quiz-text {
-    font-size: 1rem;
-    padding: 1rem;
-  }
+    .flash-quiz-container {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .flash-quiz-text {
+        font-size: 1rem;
+        padding: 1rem;
+    }
 }
