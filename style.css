@@ -381,7 +381,7 @@ body {
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    gap: 30px;
+    gap: 40px; /* Tăng khoảng cách giữa ảnh và nội dung */
 }
 
 .studypal-text {
@@ -420,10 +420,10 @@ body {
 
 .studypal-image img {
     width: 100%;
-    max-width: 450px; /* Larger image size */
-    border-radius: 15px; /* Increase roundness */
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3); /* More pronounced shadow for a pop effect */
-    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth hover effect */
+    max-width: 450px;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .studypal-image img:hover {
@@ -487,10 +487,10 @@ body {
 }
 
 .flash-quiz-container {
-    display: grid; /* Sử dụng Grid Layout để đảm bảo vị trí cố định */
-    grid-template-columns: 1fr 1fr; /* 2 cột: ảnh - nội dung */
-    gap: 2rem; /* Khoảng cách giữa ảnh và nội dung */
-    align-items: center; /* Căn giữa theo chiều dọc */
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem; /* Tăng khoảng cách giữa ảnh và nội dung */
+    align-items: center;
 }
 
 .flash-quiz-image {
