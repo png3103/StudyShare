@@ -27,29 +27,10 @@ body {
   width: 100%;
 }
 
-.navbar-content {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 100%;
-  max-width: 1200px; /* Center-align navbar content on wide screens */
-  margin: 0 auto; /* Center align the container */
-}
-
-/* Navigation Toggle */
-.navbar-toggle {
-  display: none; /* Hidden by default on desktop */
-  font-size: 1.8rem;
-  color: #007acc;
-  background: none;
-  border: none;
-  cursor: pointer;
-}
-
-/* Logo Container */
 .logo-container {
   display: flex; /* Align logo and text together */
   align-items: center; /* Center logo vertically */
+  flex-grow: 1; /* Allow logo container to occupy space */
 }
 
 .app-logo {
@@ -62,6 +43,26 @@ body {
   font-size: 1.5rem;
   color: #007acc;
   white-space: nowrap; /* Prevent text wrapping */
+}
+
+/* Download Button */
+.download-button {
+  background-color: #007acc;
+  color: white;
+  padding: 0.4rem 0.8rem;
+  border: none;
+  border-radius: 0.25rem;
+  font-weight: bold;
+  cursor: pointer;
+  text-decoration: none;
+  font-size: 1rem;
+  white-space: nowrap; /* Prevent text wrapping */
+  transition: background-color 0.3s ease;
+  margin-left: auto; /* Push the button to the right */
+}
+
+.download-button:hover {
+  background-color: #005fa3;
 }
 
 /* Desktop Menu */
@@ -89,26 +90,17 @@ body {
   font-weight: bold;
 }
 
-/* Download Button */
-.download-button {
-  background-color: #007acc;
-  color: white;
-  padding: 0.4rem 0.8rem;
-  border: none;
-  border-radius: 0.25rem;
-  font-weight: bold;
-  cursor: pointer;
-  text-decoration: none;
-  font-size: 1rem;
-  white-space: nowrap; /* Prevent text wrapping */
-  transition: background-color 0.3s ease;
-}
-
-.download-button:hover {
-  background-color: #005fa3;
-}
-
 /* Mobile Menu */
+.navbar-toggle {
+  display: none; /* Hidden by default on desktop */
+  font-size: 1.8rem;
+  color: #007acc;
+  background: none;
+  border: none;
+  cursor: pointer;
+  margin-right: 1rem; /* Add spacing for toggle */
+}
+
 .mobile-menu {
   display: none; /* Hidden by default */
   flex-direction: column;
