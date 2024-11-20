@@ -592,106 +592,101 @@ body {
 /* Flash Quiz Section */
 .flash-quiz-section {
     padding: 2rem;
-    background: linear-gradient(135deg, #f9f9ff, #e3f2fd);
+    background: linear-gradient(135deg, #f9f9ff, #e3f2fd); /* Subtle gradient for background */
     text-align: center;
     border-top: 3px solid #007acc;
     box-shadow: inset 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex; /* Flex layout for better alignment */
+    justify-content: center; /* Center the section horizontally */
+    align-items: center; /* Center the section vertically */
+    gap: 2rem; /* Space between the image and text */
+    flex-wrap: wrap; /* Allow wrapping for smaller screens */
+    max-width: 1200px; /* Limit the width of the section */
+    margin: 0 auto; /* Center the section horizontally in the viewport */
 }
 
+/* Title Styling */
 .flash-quiz-section h2 {
-    font-size: 2rem; /* Đồng bộ kích thước tiêu đề */
+    font-size: 2rem; /* Unified title font size */
     color: #005fa3;
-    margin-bottom: 1.5rem; /* Giảm khoảng cách */
+    margin-bottom: 1.5rem; /* Spacing below the title */
     font-weight: bold;
     text-transform: uppercase;
     letter-spacing: 1px;
 }
 
-.flash-quiz-container {
-    display: flex; /* Chuyển từ grid sang flex để giống StudyPal */
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    gap: 2rem; /* Giảm khoảng cách giữa các phần tử */
-}
-
+/* Image Container */
 .flash-quiz-image {
-    flex: 1;
-    max-width: 300px; /* Cố định kích thước tối đa cho hình ảnh */
+    flex: 1; /* Allow the image container to grow equally */
+    max-width: 40%; /* Limit the width of the image container */
     text-align: center;
+    display: flex;
+    justify-content: center; /* Center the image within the container */
+    align-items: center;
 }
 
 .flash-quiz-image img {
     width: 100%;
-    max-width: 300px; /* Giảm kích thước hình ảnh */
+    max-width: 300px; /* Limit the size of the image */
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .flash-quiz-image img:hover {
-    transform: scale(1.05); /* Hiệu ứng hover nhẹ nhàng */
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    transform: scale(1.05); /* Slight zoom effect on hover */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3); /* Stronger shadow on hover */
 }
 
+/* Text Container */
 .flash-quiz-text {
-    flex: 1;
-    max-width: 600px; /* Đồng bộ kích thước với StudyPal */
+    flex: 1; /* Allow the text container to grow equally */
+    max-width: 50%; /* Limit the width of the text container */
     background-color: white;
-    padding: 2rem; /* Tăng padding để đồng bộ */
+    padding: 2rem; /* Add padding inside the text container */
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     text-align: left;
     font-size: 1.1rem;
     line-height: 1.8;
     color: #333;
-    margin: 0 auto; /* Căn giữa nội dung */
+    margin: 0 auto; /* Center the container horizontally */
 }
 
 .flash-quiz-text p {
-    margin-bottom: 1rem; /* Giảm khoảng cách giữa các đoạn */
+    margin-bottom: 1rem; /* Spacing between paragraphs */
     font-weight: 500;
 }
 
+/* Responsive Design for Flash Quiz Section */
 @media (max-width: 768px) {
-    .flash-quiz-container {
-        grid-template-columns: 1fr; /* Chuyển về 1 cột */
-        gap: 2rem; /* Khoảng cách vừa đủ */
+    .flash-quiz-section {
+        flex-direction: column; /* Stack the elements vertically */
+        gap: 2rem; /* Add spacing between stacked elements */
     }
 
     .flash-quiz-image {
-        grid-column: 1; /* Đảm bảo ảnh nằm trước nội dung */
-        justify-self: center;
+        max-width: 80%; /* Adjust image width for smaller screens */
     }
 
     .flash-quiz-text {
-        grid-column: 1; /* Nội dung nằm dưới ảnh */
-        text-align: center; /* Căn giữa nội dung */
-        font-size: 1.4rem; /* Tăng kích thước văn bản */
-        line-height: 1.8; /* Giữ khoảng cách dòng thoải mái */
-        padding: 2.5rem; /* Tăng padding để khung to hơn */
-        max-width: 100%; /* Đảm bảo khung chiếm đủ chiều rộng */
-        margin: 0 auto; /* Căn giữa khung văn bản */
+        max-width: 90%; /* Adjust text container width for smaller screens */
+        text-align: center; /* Center-align text for readability */
     }
 }
 
 @media (max-width: 480px) {
     .flash-quiz-section h2 {
-        font-size: 2.5rem; /* Giữ kích thước tiêu đề lớn để nổi bật */
+        font-size: 1.5rem; /* Adjust title size for small screens */
     }
 
     .flash-quiz-text {
-        font-size: 1.6rem; /* Tăng kích thước chữ để rõ hơn */
-        line-height: 2; /* Tăng khoảng cách dòng để dễ đọc */
-        padding: 3rem; /* Tăng padding để khung văn bản lớn hơn */
-        max-width: 100%; /* Sử dụng toàn bộ chiều rộng */
-        margin: 0 auto; /* Căn giữa */
-        background-color: #f9f9ff; /* Làm khung nổi bật hơn */
-        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); /* Làm nổi khung */
+        font-size: 1rem; /* Adjust text size for smaller screens */
+        line-height: 1.6; /* Adjust line height for readability */
+        padding: 1.5rem; /* Reduce padding for smaller screens */
     }
 
     .flash-quiz-image img {
-        max-width: 95%; /* Đảm bảo ảnh to hơn một chút */
-        margin: 0 auto; /* Căn giữa ảnh */
+        max-width: 90%; /* Allow the image to take more width */
     }
 }
