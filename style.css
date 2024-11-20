@@ -13,36 +13,29 @@ body {
   line-height: 1.5;
 }
 
-/* Navbar */
+/* Navbar - Default Styles (Desktop Base) */
 .navbar {
   position: sticky;
   top: 0;
-  display: flex; /* Flexbox for layout */
-  justify-content: space-between; /* Distribute items horizontally */
+  display: flex; /* Flexbox for alignment */
+  justify-content: space-between; /* Space items horizontally */
   align-items: center; /* Center items vertically */
-  padding: 1rem 1rem; /* Standard padding */
+  padding: 1rem 2rem; /* Default padding for desktop */
   background-color: white;
   box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.1);
   z-index: 1000;
   width: 100%;
 }
 
-/* Navigation Toggle */
+/* Navigation Toggle - Hidden by Default (Desktop) */
 .navbar-toggle {
-  display: none; /* Hidden on desktop */
-  font-size: 1.8rem;
-  color: #007acc;
-  background: none;
-  border: none;
-  cursor: pointer;
-  margin-right: 1rem;
+  display: none; /* Hide toggle button on desktop */
 }
 
 /* Logo Container */
 .logo-container {
-  display: flex; /* Align logo image and text horizontally */
+  display: flex; /* Align logo image and text together */
   align-items: center; /* Center logo vertically */
-  flex-grow: 1; /* Allow logo to take up space */
 }
 
 .app-logo {
@@ -63,8 +56,6 @@ body {
   gap: 2rem;
   list-style: none;
   margin: 0;
-  flex-grow: 1;
-  justify-content: center;
 }
 
 .desktop-menu li a {
@@ -96,10 +87,13 @@ body {
   font-size: 1rem;
   white-space: nowrap; /* Prevent text wrapping */
   transition: background-color 0.3s ease;
-  margin-left: auto; /* Push to the far right */
 }
 
-/* Mobile Menu */
+.download-button:hover {
+  background-color: #005fa3;
+}
+
+/* Mobile Menu - Default State (Hidden on Desktop) */
 .mobile-menu {
   display: none;
   flex-direction: column;
@@ -137,27 +131,35 @@ body {
 
 /* Responsive Design for Mobile */
 @media (max-width: 768px) {
+  /* Hide Desktop Menu */
   .desktop-menu {
-    display: none; /* Hide desktop menu on mobile */
+    display: none;
   }
 
+  /* Navbar - Mobile Styles */
   .navbar {
     padding: 0.5rem 1rem; /* Compact padding for mobile */
-    display: flex; /* Flexbox layout */
-    flex-direction: row; /* Horizontal alignment */
-    justify-content: space-between; /* Space items evenly */
-    align-items: center; /* Center vertically */
+    flex-direction: row; /* Horizontal layout */
+    justify-content: space-between; /* Distribute items evenly */
+    align-items: center; /* Center items vertically */
   }
 
+  /* Show Toggle Button */
   .navbar-toggle {
-    display: block; /* Show toggle button */
+    display: block;
+    font-size: 1.8rem;
+    color: #007acc;
+    background: none;
+    border: none;
+    cursor: pointer;
+    margin-right: 0.5rem;
   }
 
+  /* Logo Container */
   .logo-container {
+    flex-grow: 1; /* Ensure logo takes space */
     display: flex;
     align-items: center;
-    flex-grow: 1; /* Allow logo to expand */
-    justify-content: flex-start; /* Align logo to the left */
   }
 
   .app-logo {
@@ -170,30 +172,38 @@ body {
     font-size: 1.2rem; /* Adjust text size for mobile */
   }
 
+  /* Download Button */
   .download-button {
-    font-size: 0.8rem; /* Adjust button size */
-    padding: 0.3rem 0.6rem; /* Compact button padding */
+    font-size: 0.8rem; /* Reduce button size for mobile */
+    padding: 0.3rem 0.6rem;
     margin-left: auto; /* Push button to the far right */
+  }
+
+  /* Mobile Menu - Show When Toggled */
+  .mobile-menu.show {
+    display: flex; /* Show mobile menu when toggled */
+    flex-direction: column;
   }
 }
 
 @media (max-width: 480px) {
+  /* Further Reduce Sizes for Small Screens */
   .navbar {
-    padding: 0.4rem; /* Further reduce padding for smaller devices */
+    padding: 0.4rem;
   }
 
   .app-logo {
-    width: 1.8rem; /* Further reduce logo size */
+    width: 1.8rem; /* Smaller logo */
     height: 1.8rem;
   }
 
   .logo {
-    font-size: 1rem; /* Adjust logo text size */
+    font-size: 1rem; /* Smaller font size */
   }
 
   .download-button {
-    font-size: 0.7rem; /* Adjust button text size */
-    padding: 0.2rem 0.4rem; /* Compact button padding */
+    font-size: 0.7rem; /* Smaller button */
+    padding: 0.2rem 0.4rem;
   }
 }
 
