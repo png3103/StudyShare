@@ -596,35 +596,36 @@ body {
     text-align: center;
     border-top: 3px solid #007acc;
     box-shadow: inset 0 4px 8px rgba(0, 0, 0, 0.1);
-    display: flex; /* Center content */
-    flex-direction: column; /* Keep the title at the top */
-    align-items: center; /* Center horizontally */
-    justify-content: flex-start; /* Keep title at the top */
-    height: 100vh; /* Full viewport height */
+    display: block; /* Ensure the title stays independent */
+    height: auto; /* Adjust to content height */
     box-sizing: border-box;
 }
 
 .flash-quiz-section h2 {
-    font-size: 2rem; /* Keep title size */
+    font-size: 2rem; /* Keep original title size */
     color: #005fa3;
-    margin-bottom: 2rem; /* Space between title and content */
+    margin-bottom: 2rem; /* Maintain consistent spacing */
     font-weight: bold;
     text-transform: uppercase;
     letter-spacing: 1px;
+    text-align: center; /* Keep title centered */
 }
 
+/* Flash Quiz Content Container */
 .flash-quiz-container {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    gap: 1.5rem; /* Adjust gap between elements */
-    max-width: 1200px; /* Limit container width */
+    gap: 1.5rem; /* Adjust spacing between elements */
+    max-width: 1200px; /* Limit width for larger screens */
+    margin: 0 auto; /* Center content horizontally */
 }
 
+/* Flash Quiz Image */
 .flash-quiz-image {
     flex: 1;
-    max-width: 300px; /* Fix max width for image */
+    max-width: 300px; /* Fix max width for the image */
     text-align: center;
 }
 
@@ -641,6 +642,7 @@ body {
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
 }
 
+/* Flash Quiz Text */
 .flash-quiz-text {
     flex: 1;
     max-width: 600px; /* Adjust text box width */
@@ -659,7 +661,7 @@ body {
 @media (max-width: 768px) {
     .flash-quiz-container {
         flex-direction: column; /* Stack elements vertically */
-        gap: 2rem; /* Adjust gap for better spacing */
+        gap: 2rem; /* Adjust spacing */
     }
 
     .flash-quiz-text {
@@ -671,22 +673,22 @@ body {
     }
 }
 
-/* Keep mobile view unchanged */
+/* Mobile View Unchanged */
 @media (max-width: 480px) {
     .flash-quiz-section h2 {
-        font-size: 2.5rem; /* Keep original size for heading */
+        font-size: 2.5rem; /* Keep original size */
     }
 
     .flash-quiz-text {
-        font-size: 1.6rem; /* Keep mobile font size */
-        line-height: 2; /* Keep mobile line height */
-        padding: 2.5rem; /* Retain mobile padding */
-        max-width: 100%; /* Ensure text spans width */
+        font-size: 1.6rem; /* Retain font size */
+        line-height: 2; /* Keep line height */
+        padding: 2.5rem; /* Retain padding */
+        max-width: 100%; /* Ensure text spans full width */
         background-color: #f9f9ff; /* Keep same background */
-        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); /* Maintain mobile shadow */
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); /* Keep shadow */
     }
 
     .flash-quiz-image img {
-        max-width: 95%; /* Retain current size */
+        max-width: 95%; /* Maintain image size */
     }
 }
