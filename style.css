@@ -20,7 +20,7 @@ body {
   display: flex; /* Flexbox for alignment */
   justify-content: space-between; /* Space items horizontally */
   align-items: center; /* Center items vertically */
-  padding: 1rem 2rem; /* Default padding */
+  padding: 1rem; /* Compact padding */
   background-color: white;
   box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.1);
   z-index: 1000;
@@ -29,12 +29,13 @@ body {
 
 /* Navigation Toggle */
 .navbar-toggle {
-  display: none; /* Hidden by default on desktop */
+  display: none; /* Hidden by default */
   font-size: 1.8rem;
   color: #007acc;
   background: none;
   border: none;
   cursor: pointer;
+  margin-right: 0.5rem;
 }
 
 /* Logo Container */
@@ -58,11 +59,10 @@ body {
 
 /* Desktop Menu */
 .desktop-menu {
-  display: flex; /* Horizontal menu for desktop */
+  display: flex; /* Horizontal layout for desktop */
   gap: 2rem;
   list-style: none;
   margin: 0;
-  flex-grow: 1;
   justify-content: center;
 }
 
@@ -103,7 +103,7 @@ body {
 
 /* Mobile Menu */
 .mobile-menu {
-  display: none; /* Hidden by default */
+  display: none;
   flex-direction: column;
   align-items: flex-start;
   background-color: white;
@@ -145,8 +145,8 @@ body {
 
   .navbar {
     padding: 0.5rem 1rem; /* Compact padding for mobile */
-    flex-direction: row; /* Keep items horizontal */
-    justify-content: space-between; /* Align items with space between */
+    flex-direction: row; /* Horizontal alignment */
+    justify-content: space-between; /* Space items evenly */
     align-items: center; /* Center items vertically */
   }
 
@@ -188,21 +188,21 @@ body {
 
 @media (max-width: 480px) {
   .navbar {
-    padding: 0.4rem;
+    padding: 0.4rem; /* Further reduce padding for smaller screens */
   }
 
   .app-logo {
-    width: 1.8rem; /* Reduce logo size */
+    width: 1.8rem; /* Further reduce logo size */
     height: 1.8rem;
   }
 
   .logo {
-    font-size: 1rem;
+    font-size: 1rem; /* Further reduce font size */
   }
 
   .download-button {
-    font-size: 0.7rem; /* Reduce button size */
-    padding: 0.2rem 0.4rem;
+    font-size: 0.7rem; /* Adjust button size */
+    padding: 0.2rem 0.4rem; /* Compact button padding */
   }
 }
 
