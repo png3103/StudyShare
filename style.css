@@ -24,8 +24,7 @@ body {
   background-color: white;
   box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.1);
   z-index: 1000;
-  max-width: 1200px; /* Center alignment fix */
-  margin: 0 auto; /* Center alignment fix */
+  width: 100%; /* Stretch navbar across the full width */
 }
 
 .navbar-toggle {
@@ -37,11 +36,11 @@ body {
   cursor: pointer;
 }
 
+
 /* Logo Container */
 .logo-container {
   display: flex;
   align-items: center;
-  justify-content: center;
 }
 
 .app-logo {
@@ -59,8 +58,11 @@ body {
 /* Desktop Menu */
 .desktop-menu {
   display: flex;
-  gap: 2rem;
+  gap: 2rem; /* Adds consistent spacing between menu items */
   list-style: none;
+  margin: 0 auto; /* Center menu items between logo and download button */
+  flex-grow: 1;
+  justify-content: center;
 }
 
 .desktop-menu li a {
@@ -78,6 +80,7 @@ body {
   color: #007acc;
   font-weight: bold;
 }
+
 
 /* Download Button */
 .download-button {
