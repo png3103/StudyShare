@@ -36,7 +36,6 @@ body {
   cursor: pointer;
 }
 
-
 /* Logo Container */
 .logo-container {
   display: flex;
@@ -80,7 +79,6 @@ body {
   color: #007acc;
   font-weight: bold;
 }
-
 
 /* Download Button */
 .download-button {
@@ -142,33 +140,42 @@ body {
   }
 
   .navbar {
-    justify-content: space-between;
+    display: flex;
+    flex-direction: row; /* Align navbar items in a row */
+    justify-content: space-between; /* Space items evenly */
+    align-items: center;
+    padding: 0.5rem 1rem; /* Adjust padding for mobile */
   }
 
   .navbar-toggle {
-    display: block; /* Shown on mobile */
+    display: block; /* Show toggle button on mobile */
+    font-size: 1.8rem; /* Adjust font size for better visibility */
+    color: #007acc;
+    margin-right: 1rem; /* Add spacing between toggle and other items */
   }
 
   .logo-container {
-    flex-grow: 1;
+    flex-grow: 1; /* Allow logo to occupy available space */
     display: flex;
-    justify-content: flex-start;
     align-items: center;
+    justify-content: flex-start;
   }
 
   .app-logo {
-    width: 2rem;
+    width: 2rem; /* Resize logo for smaller screens */
     height: 2rem;
     margin-right: 0.5rem;
   }
 
   .logo {
-    font-size: 1.2rem;
+    font-size: 1.2rem; /* Adjust font size for smaller screens */
+    color: #007acc;
   }
 
   .download-button {
-    padding: 0.5rem 1rem;
-    font-size: 1rem;
+    padding: 0.4rem 0.8rem; /* Adjust padding for mobile */
+    font-size: 0.9rem; /* Smaller font for button text */
+    margin-left: 0.5rem; /* Add spacing between button and other items */
   }
 
   .mobile-menu {
@@ -176,24 +183,23 @@ body {
   }
 
   .mobile-menu.show {
-    display: flex; /* Shown when toggled */
+    display: flex; /* Show menu when toggled */
   }
 }
 
 @media (max-width: 480px) {
- 
-
   .app-logo {
-    width: 2rem;
-    height: 2rem;
+    width: 1.8rem; /* Further reduce logo size for very small screens */
+    height: 1.8rem;
   }
 
-  .hero-title {
-    font-size: 1.5rem;
+  .logo {
+    font-size: 1rem; /* Further adjust logo text size */
   }
 
-  .hero-subtitle {
-    font-size: 0.9rem;
+  .download-button {
+    font-size: 0.8rem; /* Further reduce button text size */
+    padding: 0.3rem 0.6rem; /* Compact padding for very small screens */
   }
 }
 
