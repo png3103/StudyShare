@@ -17,10 +17,10 @@ body {
 .navbar {
   position: sticky;
   top: 0;
-  display: flex;
-  justify-content: space-between; /* Align items horizontally */
+  display: flex; /* Flexbox for alignment */
+  justify-content: space-between; /* Space items horizontally */
   align-items: center; /* Center items vertically */
-  padding: 1rem 2rem; /* Standard desktop padding */
+  padding: 1rem 2rem; /* Default padding */
   background-color: white;
   box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.1);
   z-index: 1000;
@@ -29,7 +29,7 @@ body {
 
 /* Navigation Toggle */
 .navbar-toggle {
-  display: none; /* Hidden by default (desktop) */
+  display: none; /* Hidden by default on desktop */
   font-size: 1.8rem;
   color: #007acc;
   background: none;
@@ -39,8 +39,9 @@ body {
 
 /* Logo Container */
 .logo-container {
-  display: flex;
-  align-items: center;
+  display: flex; /* Align logo and text together */
+  align-items: center; /* Center logo vertically */
+  flex-grow: 1; /* Allow logo to take up available space */
 }
 
 .app-logo {
@@ -57,7 +58,7 @@ body {
 
 /* Desktop Menu */
 .desktop-menu {
-  display: flex; /* Horizontal layout for desktop */
+  display: flex; /* Horizontal menu for desktop */
   gap: 2rem;
   list-style: none;
   margin: 0;
@@ -102,7 +103,7 @@ body {
 
 /* Mobile Menu */
 .mobile-menu {
-  display: none;
+  display: none; /* Hidden by default */
   flex-direction: column;
   align-items: flex-start;
   background-color: white;
@@ -144,9 +145,9 @@ body {
 
   .navbar {
     padding: 0.5rem 1rem; /* Compact padding for mobile */
-    flex-direction: row; /* Ensure horizontal alignment */
-    justify-content: space-between; /* Space items evenly */
-    align-items: center;
+    flex-direction: row; /* Keep items horizontal */
+    justify-content: space-between; /* Align items with space between */
+    align-items: center; /* Center items vertically */
   }
 
   .navbar-toggle {
@@ -154,30 +155,29 @@ body {
   }
 
   .logo-container {
+    flex-grow: 1; /* Ensure logo takes space */
     display: flex;
     align-items: center;
-    flex-grow: 1; /* Allow logo container to expand */
-    justify-content: flex-start;
   }
 
   .app-logo {
-    width: 2rem; /* Smaller logo for mobile */
+    width: 2rem;
     height: 2rem;
     margin-right: 0.5rem;
   }
 
   .logo {
-    font-size: 1.2rem; /* Adjust logo size for mobile */
+    font-size: 1.2rem;
   }
 
   .download-button {
-    font-size: 0.8rem; /* Reduce button size for mobile */
-    padding: 0.3rem 0.6rem; /* Compact padding */
+    font-size: 0.8rem; /* Adjust button size for mobile */
+    padding: 0.3rem 0.6rem;
     margin-left: auto; /* Push button to the far right */
   }
 
   .mobile-menu {
-    display: none; /* Hidden by default */
+    display: none; /* Hide mobile menu by default */
   }
 
   .mobile-menu.show {
@@ -188,20 +188,20 @@ body {
 
 @media (max-width: 480px) {
   .navbar {
-    padding: 0.4rem; /* Adjust padding for smaller screens */
+    padding: 0.4rem;
   }
 
   .app-logo {
-    width: 1.8rem; /* Smaller logo */
+    width: 1.8rem; /* Reduce logo size */
     height: 1.8rem;
   }
 
   .logo {
-    font-size: 1rem; /* Adjust text size */
+    font-size: 1rem;
   }
 
   .download-button {
-    font-size: 0.7rem; /* Reduce button size further */
+    font-size: 0.7rem; /* Reduce button size */
     padding: 0.2rem 0.4rem;
   }
 }
