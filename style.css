@@ -18,13 +18,13 @@ body {
   position: sticky;
   top: 0;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-between; /* Ensures logo, menu, and button are spaced out */
   align-items: center;
   padding: 1rem 2rem;
   background-color: white;
   box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.1);
   z-index: 1000;
-  width: 100%; /* Stretch navbar across the full width */
+  width: 100%; /* Stretches navbar across the full width */
 }
 
 .navbar-toggle {
@@ -58,11 +58,11 @@ body {
 /* Desktop Menu */
 .desktop-menu {
   display: flex;
-  gap: 2rem; /* Adds consistent spacing between menu items */
+  gap: 2rem; /* Adds spacing between menu items */
   list-style: none;
-  margin: 0 auto; /* Center menu items between logo and download button */
-  flex-grow: 1;
-  justify-content: center;
+  margin: 0; /* Ensures the menu items are inline */
+  flex-grow: 1; /* Pushes the menu items to fill the space */
+  justify-content: center; /* Centers the menu items between logo and button */
 }
 
 .desktop-menu li a {
@@ -152,7 +152,7 @@ body {
   .logo-container {
     flex-grow: 1;
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
   }
 
