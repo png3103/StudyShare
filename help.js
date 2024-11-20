@@ -1,3 +1,15 @@
+// Navbar toggle for mobile menu
+document.addEventListener('DOMContentLoaded', () => {
+  const toggleButton = document.getElementById('navbar-toggle');
+  const mobileMenu = document.getElementById('mobile-menu');
+
+  toggleButton.addEventListener('click', () => {
+    // Toggle the visibility of the mobile menu
+    mobileMenu.classList.toggle('show');
+  });
+});
+
+
 // Function to display the modal
 function showModal() {
     document.getElementById("questionModal").style.display = "flex";
