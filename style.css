@@ -18,38 +18,40 @@ body {
   position: sticky;
   top: 0;
   display: flex;
-  justify-content: space-between; /* Ensures logo, menu, and button are spaced out */
+  justify-content: space-between;
   align-items: center;
-  padding: 1rem 2rem;
+  padding: 0.5rem 1rem;
   background-color: white;
   box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.1);
   z-index: 1000;
-  width: 100%; /* Stretches navbar across the full width */
+  width: 100%;
 }
 
 .navbar-toggle {
-  display: none; /* Hidden by default on desktop */
-  font-size: 2rem;
+  display: none;
+  font-size: 1.8rem;
   color: #007acc;
   background: none;
   border: none;
   cursor: pointer;
+  margin-right: 0.5rem;
 }
 
 /* Logo Container */
 .logo-container {
   display: flex;
   align-items: center;
+  flex-grow: 1;
 }
 
 .app-logo {
-  width: 2.5rem;
-  height: 2.5rem;
+  width: 2rem;
+  height: 2rem;
   margin-right: 0.5rem;
 }
 
 .logo {
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   color: #007acc;
   white-space: nowrap;
 }
@@ -57,11 +59,11 @@ body {
 /* Desktop Menu */
 .desktop-menu {
   display: flex;
-  gap: 2rem; /* Adds spacing between menu items */
+  gap: 2rem;
   list-style: none;
-  margin: 0; /* Ensures the menu items are inline */
-  flex-grow: 1; /* Pushes the menu items to fill the space */
-  justify-content: center; /* Centers the menu items between logo and button */
+  margin: 0;
+  flex-grow: 1;
+  justify-content: center;
 }
 
 .desktop-menu li a {
@@ -84,12 +86,14 @@ body {
 .download-button {
   background-color: #007acc;
   color: white;
-  padding: 0.5rem 1rem;
+  padding: 0.3rem 0.6rem; /* Compact padding for better fit */
   border: none;
   border-radius: 0.25rem;
   font-weight: bold;
   cursor: pointer;
   text-decoration: none;
+  font-size: 0.8rem; /* Reduced font size */
+  white-space: nowrap;
   transition: background-color 0.3s ease;
 }
 
@@ -136,46 +140,44 @@ body {
 /* Responsive Design */
 @media (max-width: 768px) {
   .desktop-menu {
-    display: none; /* Hidden on mobile */
+    display: none;
   }
 
   .navbar {
     display: flex;
-    flex-direction: row; /* Align navbar items in a row */
-    justify-content: space-between; /* Space items evenly */
+    flex-direction: row;
+    justify-content: space-between;
     align-items: center;
-    padding: 0.5rem 1rem; /* Adjust padding for mobile */
   }
 
   .navbar-toggle {
-    display: block; /* Show toggle button on mobile */
-    font-size: 1.8rem; /* Adjust font size for better visibility */
-    color: #007acc;
-    margin-right: 1rem; /* Add spacing between toggle and other items */
+    display: block;
+    font-size: 1.5rem;
+    margin-right: 0.5rem;
   }
 
   .logo-container {
-    flex-grow: 1; /* Allow logo to occupy available space */
     display: flex;
     align-items: center;
+    flex-grow: 1;
     justify-content: flex-start;
   }
 
   .app-logo {
-    width: 2rem; /* Resize logo for smaller screens */
-    height: 2rem;
+    width: 1.8rem;
+    height: 1.8rem;
     margin-right: 0.5rem;
   }
 
   .logo {
-    font-size: 1.2rem; /* Adjust font size for smaller screens */
+    font-size: 1rem;
     color: #007acc;
   }
 
   .download-button {
-    padding: 0.4rem 0.8rem; /* Adjust padding for mobile */
-    font-size: 0.9rem; /* Smaller font for button text */
-    margin-left: 0.5rem; /* Add spacing between button and other items */
+    font-size: 0.75rem; /* Further reduce button font size */
+    padding: 0.25rem 0.5rem; /* Compact padding for smaller screens */
+    margin-left: auto;
   }
 
   .mobile-menu {
@@ -183,23 +185,28 @@ body {
   }
 
   .mobile-menu.show {
-    display: flex; /* Show menu when toggled */
+    display: flex;
+    flex-direction: column;
   }
 }
 
 @media (max-width: 480px) {
+  .navbar {
+    padding: 0.4rem;
+  }
+
   .app-logo {
-    width: 1.8rem; /* Further reduce logo size for very small screens */
-    height: 1.8rem;
+    width: 1.6rem; /* Smaller logo for very small screens */
+    height: 1.6rem;
   }
 
   .logo {
-    font-size: 1rem; /* Further adjust logo text size */
+    font-size: 0.9rem; /* Smaller font for the logo */
   }
 
   .download-button {
-    font-size: 0.8rem; /* Further reduce button text size */
-    padding: 0.3rem 0.6rem; /* Compact padding for very small screens */
+    font-size: 0.7rem; /* Make button text even smaller */
+    padding: 0.2rem 0.4rem; /* Compact padding */
   }
 }
 
