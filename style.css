@@ -18,17 +18,18 @@ body {
   position: sticky;
   top: 0;
   display: flex;
-  justify-content: space-between; /* Ensure items are spaced horizontally */
+  justify-content: space-between; /* Space out navbar items */
   align-items: center; /* Center items vertically */
-  padding: 0.5rem 1rem;
+  padding: 1rem 2rem;
   background-color: white;
   box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.1);
   z-index: 1000;
   width: 100%;
 }
 
+/* Navigation Toggle */
 .navbar-toggle {
-  display: none; /* Hidden by default on desktop */
+  display: none; /* Hidden by default */
   font-size: 1.8rem;
   color: #007acc;
   background: none;
@@ -41,8 +42,6 @@ body {
 .logo-container {
   display: flex;
   align-items: center;
-  flex-grow: 1;
-  justify-content: flex-start; /* Align logo and text to the left */
 }
 
 .app-logo {
@@ -59,11 +58,11 @@ body {
 
 /* Desktop Menu */
 .desktop-menu {
-  display: flex;
+  display: flex; /* Horizontal menu on desktop */
   gap: 2rem;
   list-style: none;
   margin: 0;
-  flex-grow: 1;
+  flex-grow: 1; /* Allow the menu to expand */
   justify-content: center;
 }
 
@@ -87,15 +86,14 @@ body {
 .download-button {
   background-color: #007acc;
   color: white;
-  padding: 0.4rem 0.8rem;
+  padding: 0.5rem 1rem;
   border: none;
   border-radius: 0.25rem;
   font-weight: bold;
   cursor: pointer;
   text-decoration: none;
-  font-size: 0.9rem;
+  font-size: 1rem;
   white-space: nowrap;
-  margin-left: auto;
   transition: background-color 0.3s ease;
 }
 
@@ -105,7 +103,7 @@ body {
 
 /* Mobile Menu */
 .mobile-menu {
-  display: none;
+  display: none; /* Hidden on desktop and mobile initially */
   flex-direction: column;
   align-items: flex-start;
   background-color: white;
@@ -139,66 +137,69 @@ body {
   color: #007acc;
 }
 
-/* Responsive Design for Mobile */
+/* Responsive Design */
 @media (max-width: 768px) {
   .desktop-menu {
     display: none; /* Hide desktop menu on mobile */
   }
 
   .navbar {
-    display: flex;
-    flex-direction: row; /* Align all navbar items horizontally */
-    justify-content: space-between; /* Distribute space between items */
-    align-items: center; /* Center items vertically */
+    padding: 0.5rem 1rem;
+    flex-direction: row; /* Keep items in a row */
+    justify-content: space-between;
+    align-items: center;
   }
 
   .navbar-toggle {
     display: block; /* Show toggle button */
-    margin-right: 1rem;
   }
 
   .logo-container {
+    flex-grow: 1;
     display: flex;
     align-items: center;
-    flex-grow: 1; /* Allow logo container to occupy available space */
     justify-content: flex-start;
   }
 
   .app-logo {
-    width: 2rem; /* Adjust logo size for smaller screens */
+    width: 2rem;
     height: 2rem;
     margin-right: 0.5rem;
   }
 
   .logo {
-    font-size: 1.2rem; /* Adjust text size */
-    color: #007acc;
+    font-size: 1.2rem;
   }
 
   .download-button {
-    font-size: 0.8rem; /* Reduce button size for mobile */
-    padding: 0.3rem 0.6rem; /* Compact padding for smaller screens */
-    margin-left: auto; /* Push button to the far right */
+    font-size: 0.8rem; /* Smaller button size for mobile */
+    padding: 0.3rem 0.6rem;
+    margin-left: auto;
+  }
+
+  .mobile-menu.show {
+    display: flex; /* Show mobile menu when toggled */
+    flex-direction: column;
   }
 }
 
 @media (max-width: 480px) {
   .navbar {
-    padding: 0.4rem; /* Adjust padding for smaller screens */
+    padding: 0.4rem;
   }
 
   .app-logo {
-    width: 1.8rem; /* Further reduce logo size */
+    width: 1.8rem;
     height: 1.8rem;
   }
 
   .logo {
-    font-size: 1rem; /* Adjust logo text size */
+    font-size: 1rem;
   }
 
   .download-button {
-    font-size: 0.7rem; /* Reduce button size further */
-    padding: 0.2rem 0.4rem; /* Compact padding */
+    font-size: 0.7rem;
+    padding: 0.2rem 0.4rem;
   }
 }
 
