@@ -17,10 +17,10 @@ body {
 .navbar {
   position: sticky;
   top: 0;
-  display: flex; /* Flexbox for alignment */
-  justify-content: space-between; /* Space items horizontally */
+  display: flex; /* Flexbox for layout */
+  justify-content: space-between; /* Distribute items horizontally */
   align-items: center; /* Center items vertically */
-  padding: 1rem; /* Compact padding */
+  padding: 1rem 1rem; /* Standard padding */
   background-color: white;
   box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.1);
   z-index: 1000;
@@ -29,20 +29,20 @@ body {
 
 /* Navigation Toggle */
 .navbar-toggle {
-  display: none; /* Hidden by default */
+  display: none; /* Hidden on desktop */
   font-size: 1.8rem;
   color: #007acc;
   background: none;
   border: none;
   cursor: pointer;
-  margin-right: 0.5rem;
+  margin-right: 1rem;
 }
 
 /* Logo Container */
 .logo-container {
-  display: flex; /* Align logo and text together */
+  display: flex; /* Align logo image and text horizontally */
   align-items: center; /* Center logo vertically */
-  flex-grow: 1; /* Allow logo to take up available space */
+  flex-grow: 1; /* Allow logo to take up space */
 }
 
 .app-logo {
@@ -63,6 +63,7 @@ body {
   gap: 2rem;
   list-style: none;
   margin: 0;
+  flex-grow: 1;
   justify-content: center;
 }
 
@@ -95,10 +96,7 @@ body {
   font-size: 1rem;
   white-space: nowrap; /* Prevent text wrapping */
   transition: background-color 0.3s ease;
-}
-
-.download-button:hover {
-  background-color: #005fa3;
+  margin-left: auto; /* Push to the far right */
 }
 
 /* Mobile Menu */
@@ -137,7 +135,7 @@ body {
   color: #007acc;
 }
 
-/* Responsive Design */
+/* Responsive Design for Mobile */
 @media (max-width: 768px) {
   .desktop-menu {
     display: none; /* Hide desktop menu on mobile */
@@ -145,9 +143,10 @@ body {
 
   .navbar {
     padding: 0.5rem 1rem; /* Compact padding for mobile */
+    display: flex; /* Flexbox layout */
     flex-direction: row; /* Horizontal alignment */
     justify-content: space-between; /* Space items evenly */
-    align-items: center; /* Center items vertically */
+    align-items: center; /* Center vertically */
   }
 
   .navbar-toggle {
@@ -155,40 +154,32 @@ body {
   }
 
   .logo-container {
-    flex-grow: 1; /* Ensure logo takes space */
     display: flex;
     align-items: center;
+    flex-grow: 1; /* Allow logo to expand */
+    justify-content: flex-start; /* Align logo to the left */
   }
 
   .app-logo {
-    width: 2rem;
+    width: 2rem; /* Reduce logo size for mobile */
     height: 2rem;
     margin-right: 0.5rem;
   }
 
   .logo {
-    font-size: 1.2rem;
+    font-size: 1.2rem; /* Adjust text size for mobile */
   }
 
   .download-button {
-    font-size: 0.8rem; /* Adjust button size for mobile */
-    padding: 0.3rem 0.6rem;
+    font-size: 0.8rem; /* Adjust button size */
+    padding: 0.3rem 0.6rem; /* Compact button padding */
     margin-left: auto; /* Push button to the far right */
-  }
-
-  .mobile-menu {
-    display: none; /* Hide mobile menu by default */
-  }
-
-  .mobile-menu.show {
-    display: flex; /* Show mobile menu when toggled */
-    flex-direction: column;
   }
 }
 
 @media (max-width: 480px) {
   .navbar {
-    padding: 0.4rem; /* Further reduce padding for smaller screens */
+    padding: 0.4rem; /* Further reduce padding for smaller devices */
   }
 
   .app-logo {
@@ -197,11 +188,11 @@ body {
   }
 
   .logo {
-    font-size: 1rem; /* Further reduce font size */
+    font-size: 1rem; /* Adjust logo text size */
   }
 
   .download-button {
-    font-size: 0.7rem; /* Adjust button size */
+    font-size: 0.7rem; /* Adjust button text size */
     padding: 0.2rem 0.4rem; /* Compact button padding */
   }
 }
