@@ -14,7 +14,7 @@ body {
 }
 
 /* Navbar */
-.navbar {
+.navbar { 
   position: sticky;
   top: 0;
   display: flex; /* Flexbox for alignment */
