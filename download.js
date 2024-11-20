@@ -22,11 +22,15 @@ document.addEventListener("DOMContentLoaded", function () {
   const mobileMenu = document.querySelector(".mobile-menu");
 
   toggleButton.addEventListener("click", () => {
-    // Toggle the "active" class on the mobile menu
-    mobileMenu.classList.toggle("active");
+    if (mobileMenu) {
+      // Toggle the "active" class
+      mobileMenu.classList.toggle("active");
 
-    // Update the "aria-expanded" attribute for accessibility
-    const isExpanded = toggleButton.getAttribute("aria-expanded") === "true";
-    toggleButton.setAttribute("aria-expanded", !isExpanded);
+      // Toggle the aria-expanded attribute
+      const isExpanded = toggleButton.getAttribute("aria-expanded") === "true";
+      toggleButton.setAttribute("aria-expanded", !isExpanded);
+    } else {
+      console.error("Mobile menu element not found!");
+    }
   });
 });
