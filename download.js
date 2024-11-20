@@ -17,13 +17,16 @@ document.addEventListener("DOMContentLoaded", () => {
     }, 1500);
 });
 
-// Navbar toggle for mobile menu
-document.addEventListener('DOMContentLoaded', () => {
-  const toggleButton = document.getElementById('navbar-toggle');
-  const mobileMenu = document.getElementById('mobile-menu');
+document.addEventListener("DOMContentLoaded", function () {
+  const toggleButton = document.querySelector(".navbar-toggle");
+  const mobileMenu = document.querySelector(".mobile-menu");
 
-  toggleButton.addEventListener('click', () => {
-    // Toggle the visibility of the mobile menu
-    mobileMenu.classList.toggle('show');
+  toggleButton.addEventListener("click", () => {
+    // Toggle the "active" class on the mobile menu
+    mobileMenu.classList.toggle("active");
+
+    // Update the "aria-expanded" attribute for accessibility
+    const isExpanded = toggleButton.getAttribute("aria-expanded") === "true";
+    toggleButton.setAttribute("aria-expanded", !isExpanded);
   });
 });
