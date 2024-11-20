@@ -18,16 +18,18 @@ body {
   position: sticky;
   top: 0;
   display: flex;
-  justify-content: space-between; /* Đảm bảo các phần tử nằm trên cùng một hàng */
-  align-items: center; /* Căn giữa theo chiều dọc */
+  justify-content: space-between;
+  align-items: center;
   padding: 1rem 2rem;
   background-color: white;
   box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.1);
   z-index: 1000;
+  max-width: 1200px; /* Center alignment fix */
+  margin: 0 auto; /* Center alignment fix */
 }
 
 .navbar-toggle {
-  display: none; /* Mặc định ẩn trên desktop */
+  display: none; /* Hidden by default on desktop */
   font-size: 2rem;
   color: #007acc;
   background: none;
@@ -40,7 +42,6 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  flex-grow: 1;
 }
 
 .app-logo {
@@ -134,19 +135,19 @@ body {
 /* Responsive Design */
 @media (max-width: 768px) {
   .desktop-menu {
-    display: none; /* Ẩn menu desktop trên mobile */
+    display: none; /* Hidden on mobile */
   }
 
   .navbar {
-    justify-content: space-between; /* Đảm bảo toggle, logo, và nút tải nằm ngang */
+    justify-content: space-between;
   }
 
   .navbar-toggle {
-    display: block; /* Hiển thị toggle trên mobile */
+    display: block; /* Shown on mobile */
   }
 
   .logo-container {
-    flex-grow: 1; /* Đặt logo nằm giữa */
+    flex-grow: 1;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -172,7 +173,26 @@ body {
   }
 
   .mobile-menu.show {
-    display: flex; /* Hiển thị menu khi toggle được kích hoạt */
+    display: flex; /* Shown when toggled */
+  }
+}
+
+@media (max-width: 480px) {
+  .navbar ul {
+    gap: 0.5rem;
+  }
+
+  .app-logo {
+    width: 2rem;
+    height: 2rem;
+  }
+
+  .hero-title {
+    font-size: 1.5rem;
+  }
+
+  .hero-subtitle {
+    font-size: 0.9rem;
   }
 }
 
