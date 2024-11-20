@@ -27,6 +27,15 @@ body {
   width: 100%;
 }
 
+.navbar-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: 1200px; /* Center-align navbar content on wide screens */
+  margin: 0 auto; /* Center align the container */
+}
+
 /* Navigation Toggle */
 .navbar-toggle {
   display: none; /* Hidden by default on desktop */
@@ -41,7 +50,6 @@ body {
 .logo-container {
   display: flex; /* Align logo and text together */
   align-items: center; /* Center logo vertically */
-  flex-grow: 1; /* Allow logo to take up available space */
 }
 
 .app-logo {
@@ -62,8 +70,7 @@ body {
   gap: 2rem;
   list-style: none;
   margin: 0;
-  flex-grow: 1;
-  justify-content: center;
+  justify-content: center; /* Center-align the menu */
 }
 
 .desktop-menu li a {
