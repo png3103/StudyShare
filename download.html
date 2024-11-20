@@ -9,22 +9,37 @@
   <link rel="stylesheet" href="download.css">
 </head>
 <body>
-  <!-- Navbar (same as the home page) -->
-  <header class="navbar">
-    <div class="logo-container">
-      <img src="studyshare_logo_with_bgc-3.png" alt="App Logo" class="app-logo">
-      <h1 class="logo">StudyShare</h1>
-    </div>
-    <nav>
-      <ul>
-        <li><a href="index.html">Trang chủ</a></li>
-        <li><a href="feedback.html">Phản hồi</a></li>
-        <li><a href="help.html">Trợ giúp</a></li> <!-- Updated link to help.html -->
-        <li><a href="aboutstudy.html">Về StudyShare</a></li> <!-- Link to aboutstudy.html -->
-      </ul>
-    </nav>
-    <a href="download.html" class="download-button">Tải StudyShare</a>
-  </header>
+ <header class="navbar">
+  <!-- Nút toggle -->
+  <button class="navbar-toggle" id="navbar-toggle">☰</button>
+
+  <!-- Logo -->
+  <div class="logo-container">
+    <img src="studyshare_logo_with_bgc-3.png" alt="App Logo" class="app-logo">
+    <h1 class="logo">StudyShare</h1>
+  </div>
+
+  <!-- Menu desktop -->
+  <nav class="nav-links">
+    <ul class="desktop-menu">
+       <li><a href="index.html">Trang chủ</a></li>
+      <li><a href="feedback.html">Phản hồi</a></li>
+      <li><a href="help.html">Trợ giúp</a></li>
+      <li><a href="aboutstudy.html">Về StudyShare</a></li>
+    </ul>
+
+    <!-- Menu mobile -->
+    <ul class="mobile-menu" id="mobile-menu">
+       <li><a href="index.html">Trang chủ</a></li>
+       <li><a href="feedback.html">Phản hồi</a></li>
+      <li><a href="help.html">Trợ giúp</a></li>
+      <li><a href="aboutstudy.html">Về StudyShare</a></li>
+    </ul>
+  </nav>
+
+  <!-- Nút tải -->
+  <a href="download.html" class="download-button">Tải StudyShare</a>
+</header>
 
   <!-- Download Section -->
   <section class="download-section">
