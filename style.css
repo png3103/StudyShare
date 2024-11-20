@@ -276,79 +276,114 @@ body {
 
 /* Main Section */
 .main-section {
-    display: flex;
-    justify-content: space-between; /* Ensure proper spacing between elements */
-    align-items: center;
-    padding: 2rem; /* Adjusted padding for desktop */
-    gap: 3rem; /* Added more space between app-demo and features-section */
-    background-color: #f3f8ff;
-    flex-wrap: nowrap; /* Ensure elements stay in a row for desktop */
+  display: flex;
+  justify-content: center; /* Center the content horizontally */
+  align-items: center; /* Center the content vertically */
+  padding: 2rem; /* Adjusted padding for desktop */
+  gap: 3rem; /* Space between app-demo and features-section */
+  background-color: #f3f8ff;
+  flex-wrap: wrap; /* Allow wrapping for responsiveness */
+  max-width: 1200px; /* Centered layout */
+  margin: 0 auto; /* Horizontally center the entire section */
 }
 
 .app-demo {
-    flex: 1;
-    display: flex;
-    justify-content: flex-end;
-    max-width: 45%; /* Adjusted for consistent spacing */
+  flex: 1;
+  display: flex;
+  justify-content: center; /* Center align inside the container */
+  max-width: 45%; /* Adjusted for consistent spacing */
 }
 
 .app-demo-image {
-    width: 100%;
-    max-width: 14rem;
-    border-radius: 1rem;
-    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  width: 100%;
+  max-width: 14rem;
+  border-radius: 1rem;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .app-demo-image:hover {
-    transform: scale(1.05);
-    box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.3);
+  transform: scale(1.05);
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.3);
 }
+
 
 
 .features-section {
-    flex: 1;
-    padding: 1rem;
-    max-width: 45%; /* Adjusted for consistent spacing */
+  flex: 1;
+  padding: 1rem;
+  max-width: 45%; /* Adjusted for consistent spacing */
 }
 
 .features-section h2 {
-    font-size: 1.5rem;
-    color: #007acc;
-    margin-bottom: 1rem;
+  font-size: 1.5rem;
+  color: #007acc;
+  margin-bottom: 1rem;
 }
 
 .feature-item {
-    display: flex;
-    gap: 1rem;
-    align-items: center;
-    padding: 1rem;
-    background-color: white;
-    border-radius: 0.5rem;
-    box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    margin-bottom: 1rem;
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  padding: 1rem;
+  background-color: white;
+  border-radius: 0.5rem;
+  box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  margin-bottom: 1rem;
 }
 
 .feature-item:hover {
-    transform: translateY(-0.25rem);
-    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
+  transform: translateY(-0.25rem);
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
 }
 
-
 .feature-icon {
-    width: 3rem;
-    height: 3rem;
+  width: 3rem;
+  height: 3rem;
 }
 
 .feature-text h3 {
-    font-size: 1.25rem;
-    color: #007acc;
+  font-size: 1.25rem;
+  color: #007acc;
 }
 
 .feature-text p {
+  font-size: 1rem;
+  color: #555;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .main-section {
+    flex-direction: column; /* Stack the elements vertically */
+    gap: 2rem; /* Add more spacing for stacked elements */
+    max-width: 90%; /* Make it take up more space on smaller screens */
+  }
+
+  .app-demo,
+  .features-section {
+    max-width: 100%; /* Expand to full width for better readability */
+    text-align: center; /* Center the text for mobile */
+  }
+
+  .app-demo-image {
+    max-width: 12rem; /* Smaller size for images on mobile */
+  }
+}
+
+@media (max-width: 480px) {
+  .app-demo-image {
+    max-width: 10rem; /* Further reduce the image size for very small screens */
+  }
+
+  .features-section h2 {
+    font-size: 1.25rem;
+  }
+
+  .feature-text h3 {
     font-size: 1rem;
-    color: #555;
+  }
 }
 
 /* Hero Section */
