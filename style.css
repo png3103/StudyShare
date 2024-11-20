@@ -36,6 +36,8 @@ body {
 .logo-container {
   display: flex; /* Align logo image and text together */
   align-items: center; /* Center logo vertically */
+  flex-grow: 1; /* Allow logo section to grow */
+  justify-content: flex-start; /* Align logo to the left */
 }
 
 .app-logo {
@@ -56,6 +58,8 @@ body {
   gap: 2rem;
   list-style: none;
   margin: 0;
+  flex-grow: 2; /* Let the menu take additional space */
+  justify-content: center; /* Center menu items */
 }
 
 .desktop-menu li a {
@@ -87,6 +91,7 @@ body {
   font-size: 1rem;
   white-space: nowrap; /* Prevent text wrapping */
   transition: background-color 0.3s ease;
+  margin-left: auto; /* Push to the far-right side */
 }
 
 .download-button:hover {
@@ -203,7 +208,7 @@ body {
 
   .download-button {
     font-size: 0.7rem; /* Smaller button */
-    padding: 0.2rem 0.4rem;
+    padding: 0.2rem 0.4rem; /* Compact button padding */
   }
 }
 
