@@ -596,12 +596,21 @@ body {
     text-align: center;
     border-top: 3px solid #007acc;
     box-shadow: inset 0 4px 8px rgba(0, 0, 0, 0.1);
-    display: flex; /* Use flexbox for centering */
-    justify-content: center; /* Center horizontally */
-    align-items: center; /* Center vertically */
-    flex-direction: column; /* Stack elements vertically */
-    height: 100vh; /* Make section fill the viewport */
+    display: flex; /* Center content */
+    flex-direction: column; /* Keep the title at the top */
+    align-items: center; /* Center horizontally */
+    justify-content: flex-start; /* Keep title at the top */
+    height: 100vh; /* Full viewport height */
     box-sizing: border-box;
+}
+
+.flash-quiz-section h2 {
+    font-size: 2rem; /* Keep title size */
+    color: #005fa3;
+    margin-bottom: 2rem; /* Space between title and content */
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
 }
 
 .flash-quiz-container {
@@ -609,7 +618,7 @@ body {
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    gap: 1.5rem; /* Adjust gap for closer spacing */
+    gap: 1.5rem; /* Adjust gap between elements */
     max-width: 1200px; /* Limit container width */
 }
 
@@ -636,7 +645,7 @@ body {
     flex: 1;
     max-width: 600px; /* Adjust text box width */
     background-color: white;
-    padding: 1.5rem; /* Reduce padding for compact design */
+    padding: 1.5rem; /* Compact padding */
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     text-align: left;
