@@ -181,9 +181,7 @@ body {
 }
 
 @media (max-width: 480px) {
-  .navbar ul {
-    gap: 0.5rem;
-  }
+ 
 
   .app-logo {
     width: 2rem;
@@ -273,17 +271,14 @@ body {
   }
 
 
-
-/* Main Section */
 .main-section {
   display: flex;
-  justify-content: center; /* Center the content horizontally */
-  align-items: center; /* Center the content vertically */
-  padding: 2rem; /* Adjusted padding for desktop */
-  gap: 3rem; /* Space between app-demo and features-section */
-  background-color: #f3f8ff;
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
   flex-wrap: wrap; /* Allow wrapping for responsiveness */
-  max-width: 1200px; /* Centered layout */
+  padding: 2rem; /* Space around the section */
+  gap: 3rem; /* Add spacing between app-demo and features-section */
+  max-width: 1200px; /* Center layout */
   margin: 0 auto; /* Horizontally center the entire section */
 }
 
@@ -291,12 +286,12 @@ body {
   flex: 1;
   display: flex;
   justify-content: center; /* Center align inside the container */
-  max-width: 45%; /* Adjusted for consistent spacing */
+  max-width: 45%; /* Keep consistent spacing */
 }
 
 .app-demo-image {
   width: 100%;
-  max-width: 14rem;
+  max-width: 14rem; /* Keep the image size responsive */
   border-radius: 1rem;
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -309,10 +304,11 @@ body {
 
 
 
+
 .features-section {
   flex: 1;
   padding: 1rem;
-  max-width: 45%; /* Adjusted for consistent spacing */
+  max-width: 45%; /* Keep consistent spacing */
 }
 
 .features-section h2 {
@@ -353,28 +349,27 @@ body {
   color: #555;
 }
 
-/* Responsive Design */
 @media (max-width: 768px) {
   .main-section {
-    flex-direction: column; /* Stack the elements vertically */
-    gap: 2rem; /* Add more spacing for stacked elements */
-    max-width: 90%; /* Make it take up more space on smaller screens */
+    flex-direction: column; /* Stack elements vertically */
+    max-width: 90%; /* Occupy more space on smaller screens */
+    gap: 2rem; /* Add spacing between stacked elements */
   }
 
   .app-demo,
   .features-section {
-    max-width: 100%; /* Expand to full width for better readability */
-    text-align: center; /* Center the text for mobile */
+    max-width: 100%; /* Expand to full width */
+    text-align: center; /* Center align text */
   }
 
   .app-demo-image {
-    max-width: 12rem; /* Smaller size for images on mobile */
+    max-width: 12rem; /* Adjust image size for mobile */
   }
 }
 
 @media (max-width: 480px) {
   .app-demo-image {
-    max-width: 10rem; /* Further reduce the image size for very small screens */
+    max-width: 10rem; /* Further reduce image size for small screens */
   }
 
   .features-section h2 {
@@ -386,15 +381,7 @@ body {
   }
 }
 
-/* Hero Section */
-.hero-section {
-    position: relative;
-    text-align: center;
-    padding: 5rem 2rem; /* Đảm bảo phù hợp trên desktop và mobile */
-    background-color: #007acc;
-    color: white;
-    transition: background-color 0.5s ease-in-out;
-}
+
 
 /* Hero Content */
 .hero-content {
@@ -404,26 +391,6 @@ body {
     transition: opacity 0.5s ease-in-out;
 }
 
-.hero-title {
-    font-size: 3rem; /* Kích thước lớn trên desktop */
-    font-weight: bold;
-    margin-bottom: 1rem;
-    line-height: 1.2; /* Tạo khoảng cách tốt hơn giữa các dòng */
-}
-
-.hero-title .highlight {
-    color: white;
-    position: relative;
-    display: inline-block;
-    text-decoration: none;
-}
-
-.hero-subtitle {
-    font-size: 1.2rem; /* Phù hợp trên desktop */
-    margin-bottom: 2rem;
-    color: #eaf4fc;
-    line-height: 1.6;
-}
 
 /* Responsive Design */
 @media (max-width: 768px) {
