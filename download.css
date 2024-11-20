@@ -78,42 +78,21 @@ body {
   font-weight: bold;
 }
 
-/* Download Button */
-.download-button {
-  background-color: #007acc;
-  color: white;
-  padding: 0.4rem 0.8rem;
-  border: none;
-  border-radius: 0.25rem;
-  font-weight: bold;
-  cursor: pointer;
-  text-decoration: none;
-  font-size: 1rem;
-  white-space: nowrap;
-  transition: background-color 0.3s ease;
-}
-
-.download-button:hover {
-  background-color: #005fa3;
-}
-
 /* Mobile Menu */
 .mobile-menu {
   display: none;
   flex-direction: column;
-  align-items: flex-start;
   background-color: white;
   width: 100%;
-  padding: 1rem 0;
   position: absolute;
   top: 100%;
   left: 0;
+  padding: 1rem 0;
   box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.1);
   z-index: 999;
 }
 
 .mobile-menu li {
-  width: 100%;
   padding: 0.5rem 1rem;
   border-bottom: 1px solid #f0f0f0;
 }
@@ -133,29 +112,66 @@ body {
   color: #007acc;
 }
 
+/* Navbar Toggle */
+.navbar-toggle {
+  display: none;
+  font-size: 1.8rem;
+  color: #007acc;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+/* Download Button */
+.download-button {
+  background-color: #007acc;
+  color: white;
+  padding: 0.4rem 0.8rem;
+  border: none;
+  border-radius: 0.25rem;
+  font-weight: bold;
+  cursor: pointer;
+  text-decoration: none;
+  font-size: 1rem;
+  white-space: nowrap;
+  transition: background-color 0.3s ease;
+}
+
+.download-button:hover {
+  background-color: #005fa3;
+}
+
 /* Responsive Design */
 
 /* Mobile-Specific Navbar */
 @media (max-width: 768px) {
+  .desktop-menu {
+    display: none; /* Hide desktop menu */
+  }
+
   .navbar {
-    flex-direction: row;
-    justify-content: space-between;
     padding: 0.5rem 1rem;
   }
 
   .navbar-content {
     flex-direction: row;
-    align-items: center;
     justify-content: space-between;
-    width: 100%;
-    margin: 0;
+    align-items: center;
+  }
+
+  .navbar-toggle {
+    display: block; /* Show toggle button */
+  }
+
+  .mobile-menu.active {
+    display: flex; /* Show the mobile menu when toggled */
   }
 
   .logo-container {
     flex: 1;
-    justify-content: flex-start;
     display: flex;
     align-items: center;
+    justify-content: flex-start;
   }
 
   .app-logo {
@@ -166,27 +182,6 @@ body {
 
   .logo {
     font-size: 1.2rem;
-  }
-
-  .desktop-menu {
-    display: none; /* Hide the desktop menu */
-  }
-
-  .mobile-menu {
-    display: none; /* Mobile menu is hidden initially */
-  }
-
-  .navbar-toggle {
-    display: block; /* Show the toggle button for mobile */
-    font-size: 1.8rem;
-    color: #007acc;
-    background: none;
-    border: none;
-    cursor: pointer;
-  }
-
-  .navbar-toggle.active + .mobile-menu {
-    display: flex; /* Show mobile menu when toggle is active */
   }
 
   .download-button {
