@@ -14,7 +14,7 @@ body {
 }
 
 /* Navbar */
-.navbar { 
+.navbar {
   position: sticky;
   top: 0;
   display: flex; /* Flexbox for alignment */
@@ -25,15 +25,6 @@ body {
   box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.1);
   z-index: 1000;
   width: 100%;
-}
-
-.navbar-content {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 100%;
-  max-width: 1200px; /* Center-align navbar content on wide screens */
-  margin: 0 auto; /* Center align the container */
 }
 
 /* Navigation Toggle */
@@ -50,6 +41,7 @@ body {
 .logo-container {
   display: flex; /* Align logo and text together */
   align-items: center; /* Center logo vertically */
+  flex-grow: 1; /* Allow logo to take up available space */
 }
 
 .app-logo {
@@ -70,7 +62,8 @@ body {
   gap: 2rem;
   list-style: none;
   margin: 0;
-  justify-content: center; /* Center-align the menu */
+  flex-grow: 1;
+  justify-content: center;
 }
 
 .desktop-menu li a {
@@ -213,6 +206,185 @@ body {
   }
 }
 
+/* Hero Section */
+.hero-section {
+    position: relative;
+    text-align: center;
+    padding: 5rem 1.25rem;
+    background-color: #007acc;
+    color: white;
+    transition: background-color 0.5s ease-in-out;
+}
+
+.hero-title {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
+.hero-subtitle {
+    font-size: 1.25rem;
+    margin-bottom: 2rem;
+    color: #eaf4fc;
+}
+
+/* Announcement Section */
+.hero-announcement {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 20px;
+}
+
+.png-innovative, .coming-soon {
+    background-color: white;
+    color: #007acc;
+    padding: 15px 25px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.png-innovative:hover, .coming-soon:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+}
+
+.png-innovative p, .coming-soon p {
+    font-size: 0.9em;
+    font-weight: 500;
+}
+
+.png-innovative h2, .coming-soon h2 {
+    font-size: 1.5em;
+    font-weight: bold;
+    margin-top: 5px;
+}
+
+.coming-soon h2 {
+    color: #007acc; /* No highlight color, neutral styling */
+}
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .hero-title {
+      font-size: 2.5em;
+    }
+  
+    .hero-announcement {
+      flex-direction: column;
+      gap: 20px;
+    }
+  }
+
+.main-section {
+  display: flex;
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+  flex-wrap: wrap; /* Allow wrapping for responsiveness */
+  padding: 2rem; /* Space around the section */
+  gap: 3rem; /* Add spacing between app-demo and features-section */
+  max-width: 1200px; /* Center layout */
+  margin: 0 auto; /* Horizontally center the entire section */
+}
+
+.app-demo {
+  flex: 1;
+  display: flex;
+  justify-content: center; /* Center align inside the container */
+  max-width: 45%; /* Keep consistent spacing */
+}
+
+.app-demo-image {
+  width: 100%;
+  max-width: 14rem; /* Keep the image size responsive */
+  border-radius: 1rem;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.app-demo-image:hover {
+  transform: scale(1.05);
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.3);
+}
+
+.features-section {
+  flex: 1;
+  padding: 1rem;
+  max-width: 45%; /* Keep consistent spacing */
+}
+
+.features-section h2 {
+  font-size: 1.5rem;
+  color: #007acc;
+  margin-bottom: 1rem;
+}
+
+.feature-item {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  padding: 1rem;
+  background-color: white;
+  border-radius: 0.5rem;
+  box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  margin-bottom: 1rem;
+}
+
+.feature-item:hover {
+  transform: translateY(-0.25rem);
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
+}
+
+.feature-icon {
+  width: 3rem;
+  height: 3rem;
+}
+
+.feature-text h3 {
+  font-size: 1.25rem;
+  color: #007acc;
+}
+
+.feature-text p {
+  font-size: 1rem;
+  color: #555;
+}
+
+@media (max-width: 768px) {
+  .main-section {
+    flex-direction: column; /* Stack elements vertically */
+    max-width: 90%; /* Occupy more space on smaller screens */
+    gap: 2rem; /* Add spacing between stacked elements */
+  }
+
+  .app-demo,
+  .features-section {
+    max-width: 100%; /* Expand to full width */
+    text-align: center; /* Center align text */
+  }
+
+  .app-demo-image {
+    max-width: 12rem; /* Adjust image size for mobile */
+  }
+}
+
+@media (max-width: 480px) {
+  .app-demo-image {
+    max-width: 10rem; /* Further reduce image size for small screens */
+  }
+
+  .features-section h2 {
+    font-size: 1.25rem;
+  }
+
+  .feature-text h3 {
+    font-size: 1rem;
+  }
+}
+
 /* Hero Content */
 .hero-content {
     position: relative;
@@ -220,7 +392,6 @@ body {
     margin: 0 auto; /* Căn giữa nội dung */
     transition: opacity 0.5s ease-in-out;
 }
-
 
 /* Responsive Design */
 @media (max-width: 768px) {
@@ -426,19 +597,19 @@ body {
     text-align: center;
     border-top: 3px solid #007acc;
     box-shadow: inset 0 4px 8px rgba(0, 0, 0, 0.1);
-    display: block;
-    height: auto;
+    display: block; /* Ensure the title stays independent */
+    height: auto; /* Adjust to content height */
     box-sizing: border-box;
 }
 
 .flash-quiz-section h2 {
-    font-size: 2rem;
+    font-size: 2rem; /* Keep original title size */
     color: #005fa3;
-    margin-bottom: 2rem;
+    margin-bottom: 2rem; /* Maintain consistent spacing */
     font-weight: bold;
     text-transform: uppercase;
     letter-spacing: 1px;
-    text-align: center;
+    text-align: center; /* Keep title centered */
 }
 
 /* Flash Quiz Content Container */
@@ -447,21 +618,21 @@ body {
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    gap: 1.5rem;
-    max-width: 1200px;
-    margin: 0 auto;
+    gap: 1.5rem; /* Adjust spacing between elements */
+    max-width: 1200px; /* Limit width for larger screens */
+    margin: 0 auto; /* Center content horizontally */
 }
 
 /* Flash Quiz Image */
 .flash-quiz-image {
     flex: 1;
-    max-width: 300px;
+    max-width: 300px; /* Fix max width for the image */
     text-align: center;
 }
 
 .flash-quiz-image img {
     width: 100%;
-    max-width: 300px;
+    max-width: 300px; /* Adjust image size */
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -475,49 +646,50 @@ body {
 /* Flash Quiz Text */
 .flash-quiz-text {
     flex: 1;
-    max-width: 600px;
+    max-width: 600px; /* Adjust text box width */
     background-color: white;
-    padding: 1.5rem;
+    padding: 1.5rem; /* Compact padding */
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     text-align: left;
     font-size: 1.1rem;
     line-height: 1.8;
     color: #333;
-    margin: 0;
+    margin: 0; /* Remove additional margin */
 }
 
 /* Responsive Adjustments */
 @media (max-width: 768px) {
     .flash-quiz-container {
-        flex-direction: column;
-        gap: 2rem;
+        flex-direction: column; /* Stack elements vertically */
+        gap: 2rem; /* Adjust spacing */
     }
 
     .flash-quiz-text {
         text-align: center;
-        font-size: 1rem; /* Smaller font for medium screens */
-        line-height: 1.6; /* Adjust line height */
-        padding: 1.5rem;
-        max-width: 90%;
+        font-size: 1.4rem;
+        line-height: 1.8;
+        padding: 2rem;
+        max-width: 100%;
     }
 }
 
+/* Mobile View Unchanged */
 @media (max-width: 480px) {
     .flash-quiz-section h2 {
-        font-size: 1.8rem; /* Slightly smaller title */
+        font-size: 2.5rem; /* Keep original size */
     }
 
     .flash-quiz-text {
-        font-size: 0.9rem; /* Adjust font size for small screens */
-        line-height: 1.4; /* Adjust line height */
-        padding: 1rem; /* Compact padding */
+        font-size: 1.6rem; /* Retain font size */
+        line-height: 2; /* Keep line height */
+        padding: 2.5rem; /* Retain padding */
         max-width: 100%; /* Ensure text spans full width */
-        background-color: #ffffff; /* Maintain background */
-        box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1); /* Slightly softer shadow */
+        background-color: #f9f9ff; /* Keep same background */
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); /* Keep shadow */
     }
 
     .flash-quiz-image img {
-        max-width: 90%; /* Reduce image size */
+        max-width: 95%; /* Maintain image size */
     }
 }
