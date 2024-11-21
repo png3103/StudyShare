@@ -13,21 +13,19 @@ body {
   line-height: 1.5;
 }
 
-/* Navbar General */
+/* Navbar */
 .navbar {
   position: sticky;
   top: 0;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1rem;
+  display: flex; /* Flexbox for alignment */
+  justify-content: space-between; /* Space items horizontally */
+  align-items: center; /* Center items vertically */
+  padding: 1rem 2rem; /* Default padding */
   background-color: white;
   box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.1);
   z-index: 1000;
   width: 100%;
-  box-sizing: border-box; /* Đảm bảo padding được tính vào width */
 }
-
 
 .navbar-content {
   display: flex;
@@ -38,35 +36,32 @@ body {
   margin: 0 auto; /* Center align the container */
 }
 
-/* Navbar Toggle (Menu Icon) */
+/* Navigation Toggle */
 .navbar-toggle {
-  display: none; /* Hidden by default (desktop) */
+  display: none; /* Hidden by default on desktop */
   font-size: 1.8rem;
   color: #007acc;
   background: none;
   border: none;
   cursor: pointer;
-  flex-shrink: 0; /* Không bị co nhỏ */
 }
 
 /* Logo Container */
 .logo-container {
-  display: flex;
-  align-items: center;
-  flex-grow: 1; /* Chiếm toàn bộ không gian giữa toggle và button */
-  justify-content: center; /* Đặt logo vào giữa khi có khoảng trống */
+  display: flex; /* Align logo and text together */
+  align-items: center; /* Center logo vertically */
 }
 
 .app-logo {
-  width: 2rem;
-  height: 2rem;
-  margin-right: 0.5rem; /* Khoảng cách giữa logo và text */
+  width: 2.5rem;
+  height: 2.5rem;
+  margin-right: 0.5rem;
 }
 
 .logo {
-  font-size: 1.2rem;
+  font-size: 1.5rem;
   color: #007acc;
-  white-space: nowrap; /* Không cho phép xuống dòng */
+  white-space: nowrap; /* Prevent text wrapping */
 }
 
 /* Desktop Menu */
@@ -98,14 +93,15 @@ body {
 .download-button {
   background-color: #007acc;
   color: white;
-  padding: 0.3rem 0.6rem;
+  padding: 0.4rem 0.8rem;
   border: none;
   border-radius: 0.25rem;
-  font-size: 0.9rem;
-  text-decoration: none;
+  font-weight: bold;
   cursor: pointer;
-  white-space: nowrap; /* Không cho nút bị xuống dòng */
-  flex-shrink: 0; /* Giữ nguyên kích thước */
+  text-decoration: none;
+  font-size: 1rem;
+  white-space: nowrap; /* Prevent text wrapping */
+  transition: background-color 0.3s ease;
 }
 
 .download-button:hover {
@@ -197,34 +193,23 @@ body {
   }
 }
 
-/* Mobile Specific Styles */
 @media (max-width: 480px) {
   .navbar {
-    display: flex; /* Đảm bảo flexbox hoạt động */
-    flex-direction: row; /* Các phần tử nằm trên cùng một hàng */
-    justify-content: space-between; /* Tạo khoảng cách đều giữa các phần tử */
-    align-items: center; /* Căn giữa theo chiều dọc */
-    padding: 0.5rem 1rem; /* Padding nhỏ hơn cho mobile */
+    padding: 0.4rem;
   }
 
-  .navbar-toggle {
-    display: block; /* Hiển thị nút toggle trên mobile */
-    margin-right: 0.5rem; /* Khoảng cách với logo */
+  .app-logo {
+    width: 1.8rem; /* Reduce logo size */
+    height: 1.8rem;
   }
 
-  .logo-container {
-    flex-grow: 1; /* Logo chiếm khoảng trống còn lại */
-    justify-content: flex-start; /* Đặt logo gần với nút toggle */
+  .logo {
+    font-size: 1rem;
   }
 
   .download-button {
-    margin-left: 0.5rem; /* Khoảng cách giữa logo và nút */
-    padding: 0.4rem 0.6rem;
-    font-size: 0.8rem; /* Kích thước nút nhỏ hơn */
-  }
-
-  .desktop-menu {
-    display: none; /* Ẩn menu desktop */
+    font-size: 0.7rem; /* Reduce button size */
+    padding: 0.2rem 0.4rem;
   }
 }
 
@@ -721,4 +706,4 @@ body {
     background-color: #ffffff;
     box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1); /* Slightly softer shadow */
   }
-}
+} 
