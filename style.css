@@ -380,7 +380,7 @@ body {
 
 @media (max-width: 480px) {
   .app-demo-image {
-    max-width: 20rem; /* Further reduce image size for small screens */
+    max-width: 15rem; /* Further reduce image size for small screens */
   }
 
   .features-section h2 {
