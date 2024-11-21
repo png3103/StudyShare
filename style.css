@@ -305,7 +305,7 @@ body {
 
 .app-demo-image {
   width: 100%;
-  max-width: 14rem; /* Keep the image size responsive */
+  max-width: 20rem; /* Keep the image size responsive */
   border-radius: 1rem;
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
