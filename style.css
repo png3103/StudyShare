@@ -195,21 +195,58 @@ body {
 
 @media (max-width: 480px) {
   .navbar {
-    padding: 0.4rem;
+    display: flex; /* Sử dụng flexbox để xếp hàng ngang */
+    flex-direction: row; /* Sắp xếp tất cả các phần tử theo hàng ngang */
+    justify-content: space-between; /* Khoảng cách đều giữa các phần tử */
+    align-items: center; /* Căn giữa theo chiều dọc */
+    padding: 0.5rem 1rem; /* Điều chỉnh padding cho phù hợp với mobile */
+    background-color: white; /* Đảm bảo nền navbar không ảnh hưởng */
+    z-index: 1000; /* Đảm bảo luôn nằm trên cùng */
+  }
+
+  .navbar-toggle {
+    flex-shrink: 0; /* Đảm bảo nút không bị co nhỏ */
+    font-size: 1.8rem; /* Kích thước nút lớn đủ để dễ nhìn */
+    margin-right: 0.5rem; /* Khoảng cách nhỏ giữa toggle và logo */
+    background: none; /* Không có màu nền để tránh đè hiển thị */
+    border: none; /* Loại bỏ viền */
+    cursor: pointer; /* Thêm hiệu ứng hover */
+  }
+
+  .logo-container {
+    flex-grow: 1; /* Cho phép logo chiếm không gian còn lại */
+    display: flex;
+    align-items: center; /* Căn giữa logo theo chiều dọc */
+    justify-content: center; /* Đặt logo vào giữa nếu đủ không gian */
   }
 
   .app-logo {
-    width: 1.8rem; /* Reduce logo size */
-    height: 1.8rem;
+    width: 2rem; /* Điều chỉnh kích thước logo cho phù hợp */
+    height: 2rem;
+    margin-right: 0.5rem; /* Khoảng cách giữa logo và tên */
   }
 
   .logo {
-    font-size: 1rem;
+    font-size: 1.2rem; /* Kích thước chữ nhỏ hơn cho mobile */
+    white-space: nowrap; /* Không xuống dòng */
   }
 
   .download-button {
-    font-size: 0.7rem; /* Reduce button size */
-    padding: 0.2rem 0.4rem;
+    flex-shrink: 0; /* Không cho phép nút bị co nhỏ */
+    margin-left: 0.5rem; /* Khoảng cách giữa logo và nút */
+    padding: 0.3rem 0.6rem; /* Padding nhỏ hơn cho mobile */
+    font-size: 0.9rem; /* Kích thước chữ phù hợp cho mobile */
+    background-color: #007acc; /* Màu nền nút */
+    color: white;
+    border: none;
+    border-radius: 0.25rem;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+
+  .download-button:hover {
+    background-color: #005fa3; /* Hiệu ứng hover */
   }
 }
 
