@@ -13,19 +13,21 @@ body {
   line-height: 1.5;
 }
 
-/* Navbar */
+/* Navbar General */
 .navbar {
   position: sticky;
   top: 0;
-  display: flex; /* Flexbox for alignment */
-  justify-content: space-between; /* Space items horizontally */
-  align-items: center; /* Center items vertically */
-  padding: 1rem 2rem; /* Default padding */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
   background-color: white;
   box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.1);
   z-index: 1000;
   width: 100%;
+  box-sizing: border-box; /* Đảm bảo padding được tính vào width */
 }
+
 
 .navbar-content {
   display: flex;
@@ -36,32 +38,35 @@ body {
   margin: 0 auto; /* Center align the container */
 }
 
-/* Navigation Toggle */
+/* Navbar Toggle (Menu Icon) */
 .navbar-toggle {
-  display: none; /* Hidden by default on desktop */
+  display: none; /* Hidden by default (desktop) */
   font-size: 1.8rem;
   color: #007acc;
   background: none;
   border: none;
   cursor: pointer;
+  flex-shrink: 0; /* Không bị co nhỏ */
 }
 
 /* Logo Container */
 .logo-container {
-  display: flex; /* Align logo and text together */
-  align-items: center; /* Center logo vertically */
+  display: flex;
+  align-items: center;
+  flex-grow: 1; /* Chiếm toàn bộ không gian giữa toggle và button */
+  justify-content: center; /* Đặt logo vào giữa khi có khoảng trống */
 }
 
 .app-logo {
-  width: 2.5rem;
-  height: 2.5rem;
-  margin-right: 0.5rem;
+  width: 2rem;
+  height: 2rem;
+  margin-right: 0.5rem; /* Khoảng cách giữa logo và text */
 }
 
 .logo {
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   color: #007acc;
-  white-space: nowrap; /* Prevent text wrapping */
+  white-space: nowrap; /* Không cho phép xuống dòng */
 }
 
 /* Desktop Menu */
@@ -93,15 +98,14 @@ body {
 .download-button {
   background-color: #007acc;
   color: white;
-  padding: 0.4rem 0.8rem;
+  padding: 0.3rem 0.6rem;
   border: none;
   border-radius: 0.25rem;
-  font-weight: bold;
-  cursor: pointer;
+  font-size: 0.9rem;
   text-decoration: none;
-  font-size: 1rem;
-  white-space: nowrap; /* Prevent text wrapping */
-  transition: background-color 0.3s ease;
+  cursor: pointer;
+  white-space: nowrap; /* Không cho nút bị xuống dòng */
+  flex-shrink: 0; /* Giữ nguyên kích thước */
 }
 
 .download-button:hover {
@@ -193,60 +197,34 @@ body {
   }
 }
 
+/* Mobile Specific Styles */
 @media (max-width: 480px) {
   .navbar {
-    display: flex; /* Sử dụng flexbox để xếp hàng ngang */
-    flex-direction: row; /* Sắp xếp tất cả các phần tử theo hàng ngang */
-    justify-content: space-between; /* Khoảng cách đều giữa các phần tử */
+    display: flex; /* Đảm bảo flexbox hoạt động */
+    flex-direction: row; /* Các phần tử nằm trên cùng một hàng */
+    justify-content: space-between; /* Tạo khoảng cách đều giữa các phần tử */
     align-items: center; /* Căn giữa theo chiều dọc */
-    padding: 0.5rem 1rem; /* Điều chỉnh padding cho phù hợp với mobile */
-    background-color: white; /* Đảm bảo nền navbar không ảnh hưởng */
-    z-index: 1000; /* Đảm bảo luôn nằm trên cùng */
+    padding: 0.5rem 1rem; /* Padding nhỏ hơn cho mobile */
   }
 
   .navbar-toggle {
-    flex-shrink: 0; /* Đảm bảo nút không bị co nhỏ */
-    font-size: 1.8rem; /* Kích thước nút lớn đủ để dễ nhìn */
-    margin-right: 0.5rem; /* Khoảng cách nhỏ giữa toggle và logo */
-    background: none; /* Không có màu nền để tránh đè hiển thị */
-    border: none; /* Loại bỏ viền */
-    cursor: pointer; /* Thêm hiệu ứng hover */
+    display: block; /* Hiển thị nút toggle trên mobile */
+    margin-right: 0.5rem; /* Khoảng cách với logo */
   }
 
   .logo-container {
-    flex-grow: 1; /* Cho phép logo chiếm không gian còn lại */
-    display: flex;
-    align-items: center; /* Căn giữa logo theo chiều dọc */
-    justify-content: center; /* Đặt logo vào giữa nếu đủ không gian */
-  }
-
-  .app-logo {
-    width: 2rem; /* Điều chỉnh kích thước logo cho phù hợp */
-    height: 2rem;
-    margin-right: 0.5rem; /* Khoảng cách giữa logo và tên */
-  }
-
-  .logo {
-    font-size: 1.2rem; /* Kích thước chữ nhỏ hơn cho mobile */
-    white-space: nowrap; /* Không xuống dòng */
+    flex-grow: 1; /* Logo chiếm khoảng trống còn lại */
+    justify-content: flex-start; /* Đặt logo gần với nút toggle */
   }
 
   .download-button {
-    flex-shrink: 0; /* Không cho phép nút bị co nhỏ */
     margin-left: 0.5rem; /* Khoảng cách giữa logo và nút */
-    padding: 0.3rem 0.6rem; /* Padding nhỏ hơn cho mobile */
-    font-size: 0.9rem; /* Kích thước chữ phù hợp cho mobile */
-    background-color: #007acc; /* Màu nền nút */
-    color: white;
-    border: none;
-    border-radius: 0.25rem;
-    text-decoration: none;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
+    padding: 0.4rem 0.6rem;
+    font-size: 0.8rem; /* Kích thước nút nhỏ hơn */
   }
 
-  .download-button:hover {
-    background-color: #005fa3; /* Hiệu ứng hover */
+  .desktop-menu {
+    display: none; /* Ẩn menu desktop */
   }
 }
 
