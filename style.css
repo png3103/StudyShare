@@ -712,13 +712,13 @@ body {
   background-color: #333;
   color: white;
   padding: 2rem 1rem;
+  display: none;
 }
 
 .footer-desktop .footer-container {
   max-width: 1200px;
   margin: 0 auto;
   display: flex;
-  flex-wrap: wrap;
   justify-content: space-between;
   gap: 2rem;
 }
@@ -783,6 +783,7 @@ body {
   background-color: #333;
   color: white;
   padding: 1.5rem 1rem;
+  display: block;
 }
 
 .footer-mobile .footer-container {
@@ -825,15 +826,11 @@ body {
 
 /* Responsive Design */
 @media (min-width: 769px) {
+  .footer-desktop {
+    display: block;
+  }
+
   .footer-mobile {
     display: none;
   }
 }
-
-@media (max-width: 768px) {
-  .footer-desktop {
-    display: none;
-  }
-}
-
-
