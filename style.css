@@ -708,78 +708,73 @@
     }
 }
 
-/* Footer */
-footer {
-    background-color: #333;
-    color: white;
-    padding: 2rem 1rem;
+/* Footer Styles */
+.custom-footer {
+    background-color: #222; /* Dark footer background */
+    color: #f3f8ff; /* Light text for contrast */
+    padding: 2rem 1rem; /* Spacing inside the footer */
+    text-align: center; /* Center-align content */
   }
   
-  .footer-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
+  .footer-main {
     max-width: 1200px;
-    margin: 0 auto;
-    gap: 2rem;
+    margin: 0 auto; /* Center align */
   }
   
-  .footer-column {
-    flex: 1;
-    min-width: 200px;
-  }
-  
-  .footer-column h3 {
-    color: #e0e0e0;
-    margin-bottom: 1rem;
-  }
-  
-  .footer-column ul {
-    list-style: none;
-  }
-  
-  .footer-column ul li {
+  .footer-company-name {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #fff;
     margin-bottom: 0.5rem;
   }
   
-  .footer-column ul li a {
+  .footer-description {
+    font-size: 1rem;
+    line-height: 1.6;
+    margin: 0.5rem 0 1.5rem;
     color: #ccc;
-    text-decoration: none;
-    transition: color 0.3s;
   }
   
-  .footer-column ul li a:hover {
-    color: #fff;
+  .footer-address p {
+    font-size: 0.9rem;
+    color: #ddd;
+    margin: 0.3rem 0;
   }
   
-  .footer-bottom {
+  .footer-note {
+    margin-top: 1.5rem;
+    font-size: 0.85rem;
+    color: #999;
     border-top: 1px solid #444;
-    margin-top: 2rem;
     padding-top: 1rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
   }
   
-  .footer-bottom p {
-    color: #ccc;
-  }
-  
-  .footer-social-icons img {
-    width: 30px;
-    height: 30px;
-    margin-left: 10px;
-  }
-  
-  /* Responsive */
+  /* Responsive Adjustments */
   @media (max-width: 768px) {
-    .footer-container {
-      flex-direction: column;
-      text-align: center;
-    }
-  
     .footer-bottom {
       flex-direction: column;
       text-align: center;
+      gap: 1rem;
     }
+  
+    .footer-certifications,
+    .footer-social-icons {
+      justify-content: center;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .footer-company-name {
+      font-size: 1.5rem;
+    }
+  
+    .footer-description {
+      font-size: 0.9rem;
+    }
+  
+    .footer-address p {
+      font-size: 0.85rem;
+    }
+  
+
   }
