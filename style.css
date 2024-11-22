@@ -707,177 +707,118 @@ body {
     box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1); /* Slightly softer shadow */
   }
 
-/* Default Styles (Desktop First Approach) */
-.footer {
-  background-color: #333; /* Dark background */
+/* Default Footer Styles */
+.footer-desktop {
+  background-color: #333;
   color: white;
   padding: 2rem 1rem;
-  font-size: 0.9rem;
 }
 
-.footer-container {
-  max-width: 1200px; /* Center-align content on large screens */
-  margin: 0 auto; /* Center horizontally */
+.footer-desktop .footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
   display: flex;
-  flex-wrap: wrap;
   justify-content: space-between;
+  flex-wrap: wrap; /* Allow wrapping for responsiveness */
   gap: 2rem;
 }
 
-.footer-column {
-  flex: 1;
-  min-width: 200px; /* Prevent columns from shrinking too much */
-}
-
-.footer-column h3 {
+.footer-desktop .footer-column h3 {
   font-size: 1.2rem;
+  color: #e0e0e0;
   margin-bottom: 1rem;
-  color: #e0e0e0; /* Lighter heading color */
 }
 
-.footer-column ul {
+.footer-desktop .footer-column ul {
   list-style: none;
   padding: 0;
-  margin: 0;
 }
 
-.footer-column ul li {
+.footer-desktop .footer-column ul li {
   margin-bottom: 0.5rem;
 }
 
-.footer-column ul li a {
+.footer-desktop .footer-column ul li a {
   color: #ccc;
   text-decoration: none;
   transition: color 0.3s ease;
 }
 
-.footer-column ul li a:hover {
+.footer-desktop .footer-column ul li a:hover {
   color: white;
 }
 
-.footer-bottom {
+.footer-desktop .footer-bottom {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-top: 2rem;
   border-top: 1px solid #444;
   padding-top: 1rem;
+  margin-top: 2rem;
 }
 
-.footer-bottom p {
-  margin: 0;
+.footer-desktop .footer-bottom p {
   font-size: 0.85rem;
   color: #ccc;
 }
 
-.footer-social-icons {
+.footer-desktop .footer-social-icons {
   display: flex;
-  gap: 1rem; /* Add spacing between icons */
+  gap: 1rem;
 }
 
-.footer-social-icons img {
+.footer-desktop .footer-social-icons img {
   width: 30px;
   height: 30px;
 }
 
-/* Media Query for Desktop (Screens 768px and above) */
-@media (min-width: 768px) {
-  .footer-container {
-    flex-direction: row;
-  }
-
-  .footer-column {
-    text-align: left;
-  }
-
-  .footer-bottom {
-    flex-direction: row;
-  }
-}
-
-/* Media Query for Mobile (Screens 480px and below) */
+/* Media Query for Mobile (480px and below) */
 @media (max-width: 480px) {
-  .footer {
-    padding: 1.5rem 1rem;
-  }
-
-  .footer-container {
+  .footer-desktop .footer-container {
     flex-direction: column;
     text-align: center;
-    gap: 1.5rem; /* Reduce gap between sections */
+    gap: 1.5rem;
   }
 
-  .footer-column {
+  .footer-desktop .footer-column {
     margin-bottom: 1rem;
   }
 
-  .footer-column h3 {
+  .footer-desktop .footer-column h3 {
     font-size: 1rem;
     margin-bottom: 0.75rem;
   }
 
-  .footer-column ul li a {
-    font-size: 0.85rem;
-  }
-
-  .footer-bottom {
+  .footer-desktop .footer-bottom {
     flex-direction: column;
-    margin-top: 1.5rem;
-    border-top: 1px solid #444;
-    padding-top: 1rem;
     text-align: center;
+    margin-top: 1.5rem;
   }
 
-  .footer-social-icons {
-    justify-content: center;
-    margin-top: 1rem;
-  }
-
-  .footer-social-icons img {
+  .footer-desktop .footer-social-icons img {
     width: 25px;
     height: 25px;
   }
 }
 
-/* Media Query for Tablet/Mid-Sized Screens (Between 481px and 767px) */
-@media (min-width: 481px) and (max-width: 767px) {
-  .footer {
-    padding: 2rem 1.5rem;
-  }
-
-  .footer-container {
+/* Media Query for Desktop and Tablet (481px to 768px) */
+@media (min-width: 481px) and (max-width: 768px) {
+  .footer-desktop .footer-container {
     flex-direction: row;
-    flex-wrap: wrap; /* Ensure wrapping for smaller screens */
-    text-align: left;
-    gap: 1.5rem;
-  }
-
-  .footer-column {
-    flex: 1;
-    min-width: 150px;
-    margin-bottom: 1rem;
-  }
-
-  .footer-column h3 {
-    font-size: 1.1rem;
-  }
-
-  .footer-column ul li a {
-    font-size: 0.9rem;
-  }
-
-  .footer-bottom {
-    flex-direction: row;
-    justify-content: space-between;
-    margin-top: 2rem;
-    padding-top: 1rem;
-  }
-
-  .footer-social-icons {
+    flex-wrap: wrap;
     gap: 1rem;
   }
 
-  .footer-social-icons img {
+  .footer-desktop .footer-column h3 {
+    font-size: 1.1rem;
+  }
+
+  .footer-desktop .footer-bottom {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .footer-desktop .footer-social-icons img {
     width: 28px;
     height: 28px;
   }
